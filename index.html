@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+<title>Logoritmov — Escola de Matemática | Reforço &amp; Pré-Vestibular</title>
+<meta name="description" content="Aprenda matemática de verdade com a Logoritmov. Reforço escolar, pré-vestibular, acompanhamento individual e plataforma exclusiva MoveEdu."/>
+<meta property="og:title" content="Logoritmov — Escola de Matemática"/>
+<meta property="og:description" content="Ensino moderno de matemática, acompanhamento individual e plataforma exclusiva MoveEdu."/>
+<meta property="og:type" content="website"/>
+<link id="favicon-link" rel="icon" type="image/jpeg" href="https://imagem.infro.com.br/uploads/per_11bef7b0.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ─────────────────────────────────────────────────── */
+:root{
+  --bg:#0b0b0b;
+  --bg2:#111111;
+  --fg:#f0ede6;
+  --muted:rgba(240,237,230,.55);
+  --border:rgba(240,237,230,.08);
+  --border-a:rgba(255,212,0,.22);
+  --accent:#FFD400;
+  --accent-dim:rgba(255,212,0,.1);
+  --accent-mid:rgba(255,212,0,.18);
+  --card:rgba(255,255,255,.035);
+  --font-display:"Fraunces",ui-serif,Georgia,serif;
+  --font-body:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --r:1rem;
+  --r-lg:1.5rem;
+  --shadow:0 20px 60px -16px rgba(0,0,0,.7);
+  --shadow-a:0 20px 60px -16px rgba(255,212,0,.2);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font-body);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:var(--font-display);letter-spacing:-.02em;line-height:1.1;font-weight:500}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{padding:5.5rem 0}
+
+/* ── UTILITIES ──────────────────────────────────────────────── */
+.wrap{width:100%;max-width:72rem;margin:0 auto;padding:0 1.5rem}
+.wrap-sm{width:100%;max-width:52rem;margin:0 auto;padding:0 1.5rem}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);display:block}
+.text-a{
+  background:linear-gradient(110deg,#FFD400 0%,#FFE874 55%,#FFD400 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.tag{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border-a);background:var(--accent-dim);padding:.3rem .9rem;border-radius:9999px;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.sec-head{margin-bottom:3rem}
+.sec-head h2{font-size:clamp(1.75rem,4vw,2.75rem);margin-top:.625rem}
+.sec-head p{margin-top:.75rem;color:var(--muted);max-width:36rem;font-size:1rem;line-height:1.75}
+.center{text-align:center}
+.center .sec-head p{margin-left:auto;margin-right:auto}
+
+/* ── BUTTONS ────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;padding:.85rem 1.625rem;font-weight:600;font-size:.9375rem;transition:all .25s ease;cursor:pointer;border:0;white-space:nowrap;font-family:var(--font-body)}
+.btn-primary{background:var(--accent);color:#000;box-shadow:0 0 32px rgba(255,212,0,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 52px rgba(255,212,0,.55)}
+.btn-ghost{background:transparent;color:var(--fg);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--border-a);color:var(--accent)}
+.btn-group{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+
+/* ── REVEAL ─────────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{transition:none}}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid transparent;transition:background .35s,border-color .35s;padding:.25rem 0}
+.nav.scrolled{background:rgba(11,11,11,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom-color:var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.75rem;gap:1rem}
+.brand{display:flex;align-items:center;gap:.625rem;flex-shrink:1;min-width:0;overflow:hidden}
+.brand-badge{width:2.25rem;height:2.25rem;border-radius:50%;overflow:hidden;background:var(--accent-dim);border:1px solid var(--border-a);flex-shrink:0;display:grid;place-items:center}
+.brand-badge img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.brand-name{font-family:var(--font-display);font-weight:600;font-size:1.0625rem;letter-spacing:-.02em;white-space:nowrap}
+.brand-sub{font-size:.6rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);white-space:nowrap;display:block}
+.nav-links{display:none;gap:1.75rem;list-style:none}
+.nav-links a{font-size:.875rem;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--fg)}
+@media(min-width:900px){.nav-links{display:flex}}
+.hamburger{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;width:2.35rem;height:2.35rem;background:transparent;border:1px solid var(--border);cursor:pointer;padding:.25rem;border-radius:.5rem;flex-shrink:0}
+.hamburger span{display:block;width:1.1rem;height:1.5px;background:var(--fg);border-radius:2px;transition:all .3s ease;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+@media(min-width:900px){.hamburger{display:none}}
+.mobile-menu{position:fixed;top:3.75rem;left:0;right:0;bottom:0;background:rgba(11,11,11,.98);backdrop-filter:blur(20px);z-index:99;display:flex;flex-direction:column;padding:2rem 1.5rem;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu nav{display:flex;flex-direction:column;gap:.25rem}
+.mobile-menu nav a{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--fg);padding:.75rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.mobile-menu nav a::after{content:"→";font-family:var(--font-body);font-size:1rem;color:var(--muted)}
+.mobile-menu .menu-cta{margin-top:2rem}
+.mobile-menu .menu-cta .btn{width:100%;font-size:1rem;padding:1rem 1.5rem}
+@media(min-width:900px){.mobile-menu{display:none !important}}
+
+/* ── HERO ────────────────────────────────────────────────────── */
+.hero{position:relative;overflow:hidden;padding:8.5rem 0 5rem;background:var(--bg);min-height:100svh;display:flex;align-items:center}
+.hero-glow{position:absolute;top:-10rem;left:50%;width:60rem;height:30rem;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(255,212,0,.12),transparent 65%);pointer-events:none;z-index:0}
+.hero-grid{position:absolute;inset:0;z-index:0;opacity:.3;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,transparent 70%)}
+.hero .wrap{position:relative;z-index:1;width:100%}
+.hero-inner{display:grid;gap:3rem;align-items:center;grid-template-columns:1fr}
+@media(min-width:860px){.hero-inner{grid-template-columns:1.1fr .9fr;gap:3.5rem}}
+.hero-h1{font-size:clamp(2.5rem,6vw,4.25rem);margin-top:1rem}
+.hero-h1 em{font-style:normal;color:var(--accent)}
+.hero-lead{margin-top:1.25rem;color:var(--muted);font-size:1.0625rem;max-width:32rem;line-height:1.75}
+.hero-ctas{margin-top:2rem}
+.hero-trust{margin-top:1.75rem;display:flex;align-items:center;gap:.875rem;font-size:.8125rem;color:var(--muted)}
+.hero-stars{color:var(--accent);letter-spacing:2px;font-size:.9rem}
+.hero-img-col{position:relative}
+.hero-photo-wrap{position:relative;max-width:24rem;margin:0 auto}
+@media(min-width:860px){.hero-photo-wrap{max-width:none;margin:0}}
+.hero-photo-wrap::before{content:"";position:absolute;inset:-2rem;background:rgba(255,212,0,.12);border-radius:2rem;filter:blur(48px);z-index:-1}
+.hero-photo{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border-a);background:var(--bg2);box-shadow:var(--shadow-a)}
+.hero-photo img{width:100%;height:auto;max-height:560px;object-fit:cover;object-position:top center}
+.float-card{position:absolute;display:none;align-items:center;gap:.75rem;background:rgba(11,11,11,.92);backdrop-filter:blur(12px);border:1px solid var(--border-a);border-radius:var(--r);padding:.75rem 1rem}
+@media(min-width:480px){.float-card{display:flex}}
+.float-card.left{bottom:-1rem;left:-1rem}
+.float-card.right{top:-1rem;right:-.75rem}
+.fc-icon{width:2.25rem;height:2.25rem;border-radius:.6rem;display:grid;place-items:center;background:var(--accent-dim);color:var(--accent);font-size:.75rem;font-weight:700;flex-shrink:0;font-family:var(--font-display)}
+.fc-small{font-size:.65rem;color:var(--muted)}
+.fc-big{font-size:.8rem;font-weight:600;color:var(--fg)}
+
+/* ── SOBRE ───────────────────────────────────────────────────── */
+.sobre-grid{display:grid;gap:3rem;align-items:center;grid-template-columns:1fr}
+@media(min-width:860px){.sobre-grid{grid-template-columns:1fr 1fr;gap:4.5rem}}
+.sobre-img-wrap{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.sobre-img-wrap img{width:100%;height:auto;max-height:520px;object-fit:cover;display:block}
+.sobre-text p{color:var(--muted);margin-top:1rem;line-height:1.8;font-size:.9375rem}
+.sobre-text strong{color:var(--fg)}
+.feat-list{margin-top:2rem;display:flex;flex-direction:column;gap:.75rem;list-style:none}
+.feat-list li{display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:rgba(240,237,230,.75)}
+.feat-check{width:1.375rem;height:1.375rem;border-radius:.375rem;background:var(--accent-mid);border:1px solid var(--border-a);display:grid;place-items:center;font-size:.65rem;color:var(--accent);flex-shrink:0}
+
+/* ── PROFESSOR ───────────────────────────────────────────────── */
+.prof-grid{display:grid;gap:3rem;align-items:center;grid-template-columns:1fr}
+@media(min-width:860px){.prof-grid{grid-template-columns:460px 1fr;gap:4.5rem}}
+.prof-img-wrap{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border-a);box-shadow:0 32px 80px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,212,0,.12);transition:box-shadow .4s}
+.prof-img-wrap:hover{box-shadow:0 40px 100px -20px rgba(0,0,0,.9),0 0 48px -8px rgba(255,212,0,.22),0 0 0 1px rgba(255,212,0,.22)}
+.prof-img-wrap::before{content:"";position:absolute;inset:-4rem;background:radial-gradient(ellipse at 50% 80%,rgba(255,212,0,.22),transparent 65%);filter:blur(40px);z-index:-1;pointer-events:none}
+.prof-img-wrap img{width:100%;max-height:620px;object-fit:cover;object-position:top center;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.prof-img-wrap:hover img{transform:scale(1.02)}
+.prof-quote-bar{padding:1.375rem 1.625rem;background:linear-gradient(135deg,rgba(255,212,0,.1) 0%,rgba(255,212,0,.04) 100%);border-top:1px solid var(--border-a);position:relative}
+.prof-quote-bar::before{content:"\201C";font-family:var(--font-display);font-size:4rem;line-height:0;color:rgba(255,212,0,.2);position:absolute;top:1.5rem;left:1rem;pointer-events:none}
+.prof-quote-bar p{font-size:.9rem;font-style:italic;font-family:var(--font-display);color:rgba(240,237,230,.8);line-height:1.65;padding-left:.75rem}
+.prof-quote-bar span{font-style:normal;font-weight:600;color:var(--accent)}
+.bio-list{list-style:none;margin-top:1.5rem}
+.bio-list li{display:flex;align-items:flex-start;gap:.875rem;padding:.9rem 0;border-bottom:1px solid var(--border);font-size:.9rem;color:rgba(240,237,230,.7);line-height:1.6;transition:color .2s}
+.bio-list li:hover{color:var(--fg)}
+.bio-list li:last-child{border-bottom:none}
+.bio-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:.55rem;box-shadow:0 0 6px rgba(255,212,0,.5)}
+.bio-list strong{color:var(--fg)}
+.signature{font-family:"Dancing Script",cursive;font-size:3rem;color:var(--accent);margin-top:1.5rem;line-height:1;filter:drop-shadow(0 0 12px rgba(255,212,0,.3))}
+.sig-sub{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-top:.25rem}
+
+/* ── CURSOS ──────────────────────────────────────────────────── */
+.cursos-grid{display:grid;gap:1rem;grid-template-columns:1fr;margin-top:3rem}
+@media(min-width:600px){.cursos-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.cursos-grid{grid-template-columns:repeat(3,1fr)}}
+.curso-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.75rem;transition:all .3s ease;display:flex;flex-direction:column;height:100%}
+.curso-card:hover{border-color:var(--border-a);transform:translateY(-4px);box-shadow:var(--shadow-a);background:rgba(255,212,0,.04)}
+.curso-num{font-family:var(--font-display);font-size:2.5rem;font-weight:600;color:rgba(255,212,0,.15);line-height:1;margin-bottom:.75rem;transition:color .3s}
+.curso-card:hover .curso-num{color:rgba(255,212,0,.3)}
+.curso-card h3{font-size:1.0625rem;font-weight:600;color:var(--fg)}
+.curso-card p{margin-top:.5rem;font-size:.8125rem;color:var(--muted);line-height:1.65;flex:1}
+.curso-badge{display:inline-flex;align-items:center;gap:.3rem;margin-top:.75rem;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-a);padding:.25rem .65rem;border-radius:9999px;width:fit-content}
+.curso-link{display:inline-flex;align-items:center;gap:.375rem;margin-top:1.25rem;font-size:.8rem;font-weight:600;color:var(--accent);transition:gap .2s}
+.curso-card:hover .curso-link{gap:.625rem}
+
+/* ── MOVEEDU ─────────────────────────────────────────────────── */
+.plat-grid{display:grid;gap:3.5rem;align-items:center;grid-template-columns:1fr}
+@media(min-width:860px){.plat-grid{grid-template-columns:1fr 1fr;gap:4.5rem}}
+.plat-visual{border-radius:var(--r-lg);border:1px solid var(--border-a);padding:2.5rem;background:linear-gradient(160deg,rgba(255,212,0,.07),transparent);position:relative;display:flex;align-items:center;justify-content:center;min-height:320px}
+.plat-visual::before{content:"";position:absolute;top:-3rem;left:50%;width:20rem;height:12rem;transform:translateX(-50%);background:rgba(255,212,0,.12);filter:blur(48px);z-index:0}
+.plat-logo-full{position:relative;z-index:1;max-width:320px;width:100%;margin:0 auto}
+.plat-logo-full img{width:100%;height:auto;filter:drop-shadow(0 0 24px rgba(255,212,0,.4))}
+.plat-checklist{list-style:none;margin-top:1.75rem}
+.plat-checklist li{display:flex;align-items:center;gap:.75rem;padding:.875rem 0;border-bottom:1px solid var(--border);font-size:.9rem;color:rgba(240,237,230,.75)}
+.plat-checklist li:last-child{border:none}
+.plat-ck{width:1.375rem;height:1.375rem;border-radius:.375rem;background:var(--accent-mid);border:1px solid var(--border-a);display:grid;place-items:center;font-size:.65rem;color:var(--accent);flex-shrink:0}
+
+/* ── MOVEEDU AREAS GRID ──────────────────────────────────────── */
+.plat-areas{display:grid;gap:.75rem;grid-template-columns:repeat(2,1fr);margin-top:1.5rem}
+@media(min-width:480px){.plat-areas{grid-template-columns:repeat(3,1fr)}}
+.plat-area{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:.875rem;padding:.875rem 1rem;font-size:.8rem;color:var(--muted);transition:all .25s;display:flex;align-items:center;gap:.5rem}
+.plat-area:hover{border-color:var(--border-a);color:var(--fg);background:rgba(255,212,0,.04)}
+.plat-area-dot{width:.4rem;height:.4rem;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+/* ── EBOOKS ──────────────────────────────────────────────────── */
+.ebook-banner{position:relative;overflow:hidden;border-radius:var(--r-lg);border:1px solid var(--border-a);background:linear-gradient(135deg,rgba(255,212,0,.1) 0%,rgba(255,212,0,.03) 100%);padding:3.5rem 2.5rem}
+@media(min-width:700px){.ebook-banner{padding:4rem 3.5rem}}
+.ebook-banner::before{content:"";position:absolute;top:-6rem;right:-6rem;width:28rem;height:28rem;background:radial-gradient(ellipse,rgba(255,212,0,.15),transparent 65%);filter:blur(48px);pointer-events:none}
+.ebook-inner{position:relative;z-index:1;display:grid;gap:2.5rem;align-items:center;grid-template-columns:1fr}
+@media(min-width:760px){.ebook-inner{grid-template-columns:1fr auto}}
+.ebook-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,212,0,.15);border:1px solid var(--border-a);border-radius:9999px;padding:.3rem .9rem;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.ebook-title{font-family:var(--font-display);font-size:clamp(1.5rem,3.5vw,2.25rem);color:var(--fg);line-height:1.15}
+.ebook-title span{color:var(--accent)}
+.ebook-desc{margin-top:.875rem;color:var(--muted);font-size:.9375rem;line-height:1.75;max-width:38rem}
+.ebook-feats{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
+.ebook-feat{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:rgba(240,237,230,.7);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:.3rem .75rem;border-radius:9999px}
+.ebook-feat::before{content:"✓";color:var(--accent);font-size:.65rem}
+.ebook-cta-col{display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+@media(min-width:760px){.ebook-cta-col{align-items:center;min-width:200px}}
+.ebook-price-box{text-align:center;background:rgba(255,212,0,.07);border:1px solid var(--border-a);border-radius:var(--r);padding:1.25rem 1.5rem;width:100%}
+.ebook-price-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
+.ebook-price{font-family:var(--font-display);font-size:2.25rem;font-weight:600;color:var(--accent);line-height:1}
+.ebook-price-sub{font-size:.7rem;color:var(--muted);margin-top:.25rem}
+
+/* ── DIFERENCIAIS ────────────────────────────────────────────── */
+.diffs-grid{display:grid;gap:1rem;grid-template-columns:1fr;margin-top:2.5rem}
+@media(min-width:560px){.diffs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.diffs-grid{grid-template-columns:repeat(4,1fr)}}
+.diff-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;transition:all .3s;height:100%}
+.diff-card:hover{border-color:var(--border-a);background:rgba(255,212,0,.04)}
+.diff-card:hover .diff-ck{background:var(--accent);color:#000}
+.diff-ck{width:1.75rem;height:1.75rem;border-radius:.375rem;background:var(--accent-dim);color:var(--accent);display:grid;place-items:center;font-size:.75rem;flex-shrink:0;transition:all .3s}
+.diff-label{font-size:.9rem;font-weight:500;color:var(--fg);line-height:1.4}
+
+/* ── DEPOIMENTOS ─────────────────────────────────────────────── */
+.slider-wrap{position:relative;overflow:hidden;margin-top:3rem}
+.slider-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.slide{flex:0 0 100%;padding:0 .5rem}
+.dep-card{max-width:600px;margin:0 auto;padding:2.5rem;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--border)}
+.dep-stars{color:var(--accent);font-size:.875rem;letter-spacing:3px}
+.dep-quote{margin-top:1.25rem;font-size:1rem;font-style:italic;font-family:var(--font-display);color:rgba(240,237,230,.8);line-height:1.75}
+.dep-author{margin-top:1.75rem;display:flex;align-items:center;gap:.875rem}
+.dep-avatar{width:2.75rem;height:2.75rem;border-radius:50%;background:linear-gradient(135deg,var(--accent),#FF9800);color:#000;font-weight:800;display:grid;place-items:center;font-size:.9rem;flex-shrink:0}
+.dep-name{font-weight:600;font-size:.9rem}
+.dep-role{font-size:.75rem;color:var(--muted)}
+.dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.75rem}
+.dot{height:6px;width:6px;border-radius:9999px;background:rgba(240,237,230,.2);border:none;cursor:pointer;transition:all .3s;padding:0}
+.dot.on{width:1.75rem;background:var(--accent)}
+
+/* ── FAQ ─────────────────────────────────────────────────────── */
+.faq-list{display:flex;flex-direction:column;gap:.625rem;margin-top:2.5rem}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .3s}
+.faq-item:hover,.faq-item.open{border-color:var(--border-a)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.125rem 1.375rem;background:transparent;border:0;cursor:pointer;text-align:left;color:inherit;font:inherit}
+.faq-q-text{font-family:var(--font-display);font-weight:500;font-size:.9375rem;line-height:1.35;color:var(--fg)}
+.faq-chevron{color:var(--accent);flex-shrink:0;font-size:1rem;transition:transform .3s}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{font-size:.875rem;color:var(--muted);line-height:1.75;padding:.25rem 1.375rem 1.375rem}
+
+/* ── LOCALIZAÇÃO — REDESENHADO ───────────────────────────────── */
+.local-card{
+  background:var(--card);
+  border:1px solid var(--border-a);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  margin-top:3rem;
+}
+.local-map{width:100%;height:360px;border:0;display:block;filter:grayscale(20%) contrast(1.1) brightness(.85)}
+.local-body{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+}
+@media(min-width:760px){
+  .local-body{grid-template-columns:1fr 1fr;}
+}
+.local-info-block{padding:2rem 2rem 2rem;}
+.local-info-block h3{font-size:1.125rem;font-weight:500;margin-bottom:1.5rem;color:var(--fg)}
+.local-row{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 0;border-bottom:1px solid var(--border)}
+.local-row:last-of-type{border-bottom:none}
+.local-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:.2rem}
+.local-value{font-size:.875rem;color:var(--fg);font-weight:500;line-height:1.5}
+.local-icon{width:2.25rem;height:2.25rem;border-radius:.6rem;background:var(--accent-dim);border:1px solid var(--border-a);display:grid;place-items:center;flex-shrink:0;color:var(--accent)}
+.local-cta-block{
+  padding:2rem;
+  background:linear-gradient(160deg,rgba(255,212,0,.07),transparent);
+  border-top:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:1rem;
+}
+@media(min-width:760px){
+  .local-cta-block{
+    border-top:none;
+    border-left:1px solid var(--border);
+  }
+}
+.local-cta-block p{font-size:.8125rem;color:var(--muted);line-height:1.7}
+.local-cta-block strong{color:var(--fg)}
+.map-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;color:#000;background:var(--accent);padding:.75rem 1.25rem;border-radius:9999px;transition:all .25s;box-shadow:0 0 24px rgba(255,212,0,.3)}
+.map-link:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(255,212,0,.5)}
+.map-link-ghost{display:inline-flex;align-items:center;gap:.375rem;font-size:.8rem;font-weight:500;color:var(--muted);border:1px solid var(--border);padding:.625rem 1rem;border-radius:9999px;transition:all .25s}
+.map-link-ghost:hover{border-color:var(--border-a);color:var(--accent)}
+
+/* ── CTA FINAL ───────────────────────────────────────────────── */
+.cta-box{position:relative;overflow:hidden;padding:4.5rem 2.5rem;border-radius:1.75rem;text-align:center;border:1px solid var(--border-a);background:var(--accent-dim)}
+@media(min-width:640px){.cta-box{padding:5.5rem 3.5rem}}
+.cta-box::before{content:"";position:absolute;top:-8rem;left:50%;width:40rem;height:20rem;transform:translateX(-50%);background:rgba(255,212,0,.15);filter:blur(64px);z-index:0;pointer-events:none}
+.cta-box>*{position:relative;z-index:1}
+.cta-box h2{font-size:clamp(2rem,5vw,3.25rem)}
+.cta-box p{margin:1.25rem auto 0;max-width:34rem;color:var(--muted);font-size:1rem;line-height:1.75}
+.cta-btns{margin-top:2.25rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.875rem}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.foot{padding:4rem 0 2rem;border-top:1px solid var(--border);background:var(--bg)}
+.foot-grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media(min-width:560px){.foot-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.foot-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+.foot-brand p{margin-top:.875rem;font-size:.8125rem;color:var(--muted);max-width:240px;line-height:1.7}
+.foot-col h4{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:.875rem}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.foot-col a,.foot-col span{font-size:.85rem;color:var(--muted);transition:color .2s}
+.foot-col a:hover{color:var(--accent)}
+.foot-socs{display:flex;gap:.625rem;margin-top:1rem;flex-wrap:wrap}
+.foot-soc{width:2.25rem;height:2.25rem;border-radius:.5rem;background:var(--card);border:1px solid var(--border);display:grid;place-items:center;transition:all .3s;color:var(--muted)}
+.foot-soc:hover{border-color:var(--border-a);color:var(--accent)}
+.foot-soc svg{width:1rem;height:1rem;fill:currentColor}
+.foot-bottom{margin-top:3rem;padding-top:1.75rem;border-top:1px solid var(--border);text-align:center;font-size:.7rem;color:rgba(240,237,230,.3);line-height:1.7}
+.foot-credit{display:inline-flex;align-items:center;gap:.3rem;transition:color .2s}
+.foot-credit:hover{color:var(--accent)}
+
+/* ── WA FLOAT ────────────────────────────────────────────────── */
+.wa-fab{position:fixed;bottom:1.375rem;right:1.375rem;z-index:200;width:3.25rem;height:3.25rem;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .25s,box-shadow .25s;animation:fabbreathe 2.8s ease-in-out infinite}
+@keyframes fabbreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.wa-fab::before{content:"";position:absolute;inset:0;border-radius:50%;animation:wapulse 2.2s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes wapulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.wa-fab:hover{transform:scale(1.12) !important;box-shadow:0 12px 36px rgba(37,211,102,.65)}
+</style>
+</head>
+<body>
+
+<!-- WA FLOAT -->
+<a class="wa-fab" href="#" data-wa aria-label="Falar pelo WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.269a.75.75 0 0 0 .921.921l5.444-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.524-5.204-1.433l-.374-.222-3.878 1.045 1.046-3.878-.222-.374A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<!-- HEADER -->
+<header class="nav" id="hdr">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-badge"><img data-img-logo src="https://imagem.infro.com.br/uploads/per_11bef7b0.jpg" alt="Logo Logoritmov" width="80" height="80" loading="eager"/></span>
+      <span>
+        <span class="brand-name" data-brand-name>Logoritmov</span>
+        <span class="brand-sub" data-brand-sub-header>Escola de Matemática</span>
+      </span>
+    </a>
+    <nav><ul class="nav-links">
+      <li><a href="#sobre">A Escola</a></li>
+      <li><a href="#professor">Professor</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a href="#ebooks">Ebooks</a></li>
+      <li><a href="#plataforma">MovEdu</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+    </ul></nav>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu">
+  <nav>
+    <a href="#sobre">A Escola</a>
+    <a href="#professor">Professor</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#ebooks">Ebooks</a>
+    <a href="#plataforma">MovEdu</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+  <div class="menu-cta"><a class="btn btn-primary" href="#" data-wa>Agendar Aula</a></div>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="rv">
+        <span class="tag">Tudo sobre Matemática</span>
+        <h1 class="hero-h1" id="hero-title">Aprenda Matemática de <em>verdade</em> com a Logoritmov.</h1>
+        <p class="hero-lead" id="hero-lead">Do reforço escolar ao Pré-Vestibular. Metodologia própria, acompanhamento individual e acesso à plataforma MovEdu para acelerar sua aprendizagem.</p>
+        <div class="hero-ctas">
+          <div class="btn-group">
+            <a class="btn btn-primary" href="#" data-wa>Quero Agendar Minha Aula</a>
+            <a class="btn btn-ghost" href="https://movedu.tec.br" target="_blank" rel="noopener">Conhecer MovEdu</a>
+          </div>
+        </div>
+        <div class="hero-trust">
+          <span class="hero-stars">★★★★★</span>
+          <span>4.9/5 · +109 mil seguidores · @logaritmov</span>
+        </div>
+      </div>
+      <div class="rv" style="transition-delay:.12s">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo">
+            <img data-img-perfil src="https://imagem.infro.com.br/uploads/per_a86a8deb.png" alt="Professor Vinícius — Logoritmov" width="900" height="900" loading="eager"/>
+          </div>
+          <div class="float-card left">
+            <div class="fc-icon">98%</div>
+            <div><div class="fc-small">Satisfação dos alunos</div><div class="fc-big">Metodologia própria</div></div>
+          </div>
+          <div class="float-card right">
+            <div class="fc-icon">109k</div>
+            <div><div class="fc-small">Seguidores</div><div class="fc-big">@logaritmov</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sobre-grid">
+      <div class="rv">
+        <div class="sobre-img-wrap">
+          <img src="https://imagem.infro.com.br/uploads/per_5c39989b.jpg" alt="Logoritmov" loading="lazy" width="900" height="900"/>
+        </div>
+      </div>
+      <div class="rv" style="transition-delay:.1s">
+        <div class="sec-head">
+          <span class="eyebrow">A Escola</span>
+          <h2>Matemática simples, acessível e com <em style="font-style:normal;color:var(--accent)">resultados reais.</em></h2>
+          <div id="sobre-paragrafos"></div>
+        </div>
+        <ul class="feat-list">
+          <li><span class="feat-check">✓</span>Metodologia própria e linguagem clara</li>
+          <li><span class="feat-check">✓</span>Acesso à plataforma MovEdu</li>
+          <li><span class="feat-check">✓</span>Aulas presenciais e online</li>
+          <li><span class="feat-check">✓</span>Acompanhamento individual</li>
+        </ul>
+        <div style="margin-top:2rem">
+          <a class="btn btn-primary" href="#" data-wa>Agendar Aula Gratuita</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSOR -->
+<section id="professor">
+  <div class="wrap">
+    <div class="prof-grid">
+      <div class="rv">
+        <div class="prof-img-wrap">
+          <img data-img-professor src="https://imagem.infro.com.br/uploads/per_932c6b0d.png" alt="Professor Vinícius — Logoritmov" loading="lazy" width="900" height="900"/>
+          <div class="prof-quote-bar">
+            <p>"A matemática não é um bicho de sete cabeças — é uma <span>linguagem</span> que pode mudar o seu futuro!"</p>
+          </div>
+        </div>
+      </div>
+      <div class="rv" style="transition-delay:.1s">
+        <span class="eyebrow">Quem sou eu</span>
+        <h2 style="margin-top:.625rem;font-size:clamp(2rem,4vw,3rem)">Professor <span class="text-a">Vinícius</span></h2>
+        <p style="margin-top:.75rem;color:var(--muted);font-size:.9375rem">Fundador da Logoritmov e apaixonado por transformar vidas através do ensino de matemática e filosofia.</p>
+        <ul class="bio-list" id="bio-list"></ul>
+        <div class="signature">Prof. Vinícius</div>
+        <div class="sig-sub">Fundador · Logoritmov</div>
+        <div class="btn-group" style="margin-top:1.75rem">
+          <a class="btn btn-primary" href="#" data-wa>Falar com o Prof.</a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/logaritmov/" target="_blank" rel="noopener">@logaritmov</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURSOS -->
+<section id="cursos" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="center sec-head rv">
+      <span class="eyebrow">Nossos Cursos</span>
+      <h2>Matemática para todos os <span class="text-a">níveis</span></h2>
+      <p>A Logoritmov é especialista em matemática — do reforço escolar, pré-vestibular, concursos e até mesmo matemática universitária. Aulas presenciais em Brasília/DF ou online pelo WhatsApp.</p>
+    </div>
+    <div class="cursos-grid" id="cursos-grid"></div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <p style="color:var(--muted);font-size:.875rem;margin-bottom:1rem">Quer outros conteúdos além da matemática? Conheça a plataforma MovEdu.</p>
+      <a class="btn btn-ghost" href="https://movedu.tec.br" target="_blank" rel="noopener">Ver todos os cursos na MovEdu →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EBOOKS -->
+<section id="ebooks">
+  <div class="wrap">
+    <div class="ebook-banner rv">
+      <div class="ebook-inner">
+        <div>
+          <div class="ebook-badge">📚 Loja Digital</div>
+          <h2 class="ebook-title">Ebooks de Matemática<br><span>direto ao ponto.</span></h2>
+          <p class="ebook-desc">Material didático desenvolvido pelo Prof. Vinícius para quem quer estudar no próprio ritmo. Conteúdo objetivo, linguagem clara e exercícios resolvidos — do básico ao vestibular.</p>
+          <div class="ebook-feats">
+            <span class="ebook-feat">Download imediato</span>
+            <span class="ebook-feat">Acesso vitalício</span>
+            <span class="ebook-feat">Exercícios resolvidos</span>
+            <span class="ebook-feat">Linguagem clara</span>
+          </div>
+        </div>
+        <div class="ebook-cta-col">
+          <div class="ebook-price-box">
+            <div class="ebook-price-label">A partir de</div>
+            <div class="ebook-price">R$&nbsp;25,99</div>
+            <div class="ebook-price-sub">Acesso imediato</div>
+          </div>
+          <a class="btn btn-primary" href="https://www.canva.com/design/DAHO2BhYT3Y/RWBGZdwyzlyurdQi4AVqZA/view?utm_content=DAHO2BhYT3Y&utm_campaign=designshare&utm_medium=link&utm_source=viewer" target="_blank" rel="noopener" style="width:100%;justify-content:center">Ver Ebooks →</a>
+          <a class="btn btn-ghost" href="mailto:logaritmov@gmail.com" style="width:100%;justify-content:center;font-size:.8125rem">Dúvidas? Fale conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOVEEDU -->
+<section id="plataforma" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="plat-grid">
+      <div class="rv">
+        <div class="plat-visual" style="padding:1.5rem;min-height:320px;display:flex;align-items:center;justify-content:center">
+          <img src="https://imagem.infro.com.br/uploads/per_02cf1e18.jpg" alt="MovEdu — Plataforma de Estudos" loading="lazy" style="width:100%;height:100%;object-fit:contain;max-height:340px;filter:drop-shadow(0 0 32px rgba(255,212,0,.35))"/>
+        </div>
+      </div>
+      <div class="rv" style="transition-delay:.1s">
+        <div class="sec-head" style="margin-bottom:1.5rem">
+          <span class="eyebrow">Plataforma Parceira</span>
+          <h2>Mais do que matemática — estude na <span class="text-a">MovEdu</span></h2>
+          <p>A MovEdu é uma plataforma independente e completa de ensino. Você pode ter acesso a videoaulas, exercícios e acompanhamento em diversas áreas do conhecimento — incluindo cursos de <strong style="color:var(--fg)">graduação e pós-graduação</strong> — a qualquer hora e de qualquer lugar.</p>
+        </div>
+
+        <!-- Áreas disponíveis na MovEdu -->
+        <p style="font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-weight:600;margin-bottom:.75rem">Áreas disponíveis</p>
+        <div class="plat-areas">
+          <div class="plat-area"><span class="plat-area-dot"></span>Matemática</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>Graduação</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>Pós-Graduação</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>Português</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>Ciências</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>História</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>Geografia</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>Física</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>Química</div>
+          <div class="plat-area"><span class="plat-area-dot"></span>E muito mais</div>
+        </div>
+
+        <ul class="plat-checklist" style="margin-top:1.5rem">
+          <li><span class="plat-ck">✓</span>Videoaulas em alta qualidade</li>
+          <li><span class="plat-ck">✓</span>Exercícios interativos com gabarito</li>
+          <li><span class="plat-ck">✓</span>Acompanhamento do progresso em tempo real</li>
+          <li><span class="plat-ck">✓</span>Acesso 24h por dia, 7 dias por semana</li>
+          <li><span class="plat-ck">✓</span>Cursos de graduação e pós-graduação disponíveis</li>
+        </ul>
+        <p style="margin-top:1.5rem;font-size:.8125rem;color:var(--muted);line-height:1.7">Prefere ver tudo em um só lugar? Baixe o <a href="https://drive.google.com/file/d/1Cx40uyG3I3FfVWg9XTvDbjOfoOnd9Zv8/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">catálogo de cursos da MovEdu</a> ou, se achar mais fácil, acesse direto a plataforma clicando no botão abaixo.</p>
+        <div style="margin-top:1.25rem">
+          <a class="btn btn-primary" href="https://movedu.tec.br" target="_blank" rel="noopener">Acessar a Plataforma MovEdu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section>
+  <div class="wrap">
+    <div class="center sec-head rv">
+      <span class="eyebrow">Diferenciais</span>
+      <h2>O que nos torna <span class="text-a">únicos</span></h2>
+    </div>
+    <div class="diffs-grid" id="diffs-grid"></div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="center sec-head rv">
+      <span class="eyebrow">Depoimentos</span>
+      <h2>Histórias que nos <span class="text-a">inspiram</span></h2>
+    </div>
+    <div class="slider-wrap rv">
+      <div class="slider-track" id="slider-track"></div>
+      <div class="dots" id="slider-dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap-sm">
+    <div class="center sec-head rv">
+      <span class="eyebrow">FAQ</span>
+      <h2>Perguntas <span class="text-a">frequentes</span></h2>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section id="localizacao" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="center sec-head rv">
+      <span class="eyebrow">Localização</span>
+      <h2>Venha nos <span class="text-a">conhecer</span></h2>
+      <p>Estamos prontos para receber você e mostrar como a matemática pode ser incrível.</p>
+    </div>
+
+    <div class="local-card rv">
+      <!-- Mapa -->
+      <iframe id="map-iframe" class="local-map" title="Localização Logoritmov"
+        src="https://maps.google.com/maps?q=SH+Monte+D'Armas+Condominio+Estancia+Monte+D'Armas+V+Mod+3+Estancia+5+Modulo+3+Loja+3B+Brasilia+DF&z=15&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+
+      <!-- Infos + CTA -->
+      <div class="local-body">
+        <div class="local-info-block">
+          <h3>Como chegar</h3>
+
+          <div class="local-row">
+            <span class="local-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <div class="local-label">Endereço</div>
+              <div class="local-value" id="local-endereco">SH Mte. D'armas, Cond. Estância Mte. D'Armas V, Mod 3, Estância 5, Módulo 3, Loja 3B — Brasília/DF, 73402-009</div>
+            </div>
+          </div>
+
+          <div class="local-row">
+            <span class="local-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.72-.72a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div>
+              <div class="local-label">Telefone / WhatsApp</div>
+              <div class="local-value" id="local-tel">61 99145-2986</div>
+            </div>
+          </div>
+
+          <div class="local-row">
+            <span class="local-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><path d="M7 15h2m4 0h2"/></svg>
+            </span>
+            <div>
+              <div class="local-label">E-mail</div>
+              <div class="local-value"><a href="mailto:logaritmov@gmail.com" style="color:var(--accent)">logaritmov@gmail.com</a></div>
+            </div>
+          </div>
+
+          <div class="local-row">
+            <span class="local-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <div>
+              <div class="local-label">Horários de Atendimento</div>
+              <div class="local-value" id="local-horarios"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="local-cta-block">
+          <div>
+            <p style="font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-weight:600;margin-bottom:.75rem">Chegar é fácil</p>
+            <p>Estamos localizados no <strong>Condomínio Estância Monte D'Armas V</strong>, em Brasília/DF. Clique no botão abaixo para abrir as rotas no Google Maps.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.625rem">
+            <a class="map-link" id="maps-link" href="https://maps.app.goo.gl/keUVAH1BBuY6qbrJ9" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Abrir no Google Maps
+            </a>
+            <a class="map-link-ghost" href="#" data-wa>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.269a.75.75 0 0 0 .921.921l5.444-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.524-5.204-1.433l-.374-.222-3.878 1.045 1.046-3.878-.222-.374A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+              Falar pelo WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="padding:3rem 0 5rem">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <span class="tag">Seu futuro começa agora</span>
+      <h2 style="margin-top:1rem">Invista no <span class="text-a">conhecimento</span>.</h2>
+      <p>Descubra como a matemática pode ser muito mais simples. Vem comigo — juntos, vamos mais longe!</p>
+      <div class="cta-btns">
+        <a class="btn btn-primary" href="#" data-wa>Quero Agendar Minha Aula</a>
+        <a class="btn btn-ghost" href="https://www.canva.com/design/DAHO2BhYT3Y/RWBGZdwyzlyurdQi4AVqZA/view?utm_content=DAHO2BhYT3Y&utm_campaign=designshare&utm_medium=link&utm_source=viewer" target="_blank" rel="noopener">Ver Ebooks</a>
+      </div>
+      <div id="socials-cta" style="display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2.5rem"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="brand-badge"><img data-img-logo src="https://imagem.infro.com.br/uploads/per_11bef7b0.jpg" alt="Logo" width="80" height="80" loading="lazy"/></span>
+          <span class="brand-name" data-brand-name>Logoritmov</span>
+        </div>
+        <p data-brand-sub-footer>Escola de Matemática — Tudo sobre Matemática</p>
+        <div class="foot-socs" id="foot-socs"></div>
+      </div>
+      <div class="foot-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">A Escola</a></li>
+          <li><a href="#professor">Professor</a></li>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#ebooks">Ebooks</a></li>
+          <li><a href="#plataforma">MovEdu</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Cursos</h4>
+        <ul id="foot-cursos"></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><span id="foot-endereco"></span></li>
+          <li><span id="foot-tel"></span></li>
+          <li><a href="mailto:logaritmov@gmail.com">logaritmov@gmail.com</a></li>
+          <li><a href="mailto:suportelogaritmov@gmail.com">suportelogaritmov@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/logaritmov/" target="_blank" rel="noopener">@logaritmov</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      &copy; <span data-year></span> <span data-brand-name>Logoritmov</span> — Todos os direitos reservados.<br>
+      <a class="foot-credit" id="footer-dev-link" href="https://wa.me/5561999118365" target="_blank" rel="noopener"><span id="footer-dev-text">Desenvolvido por GTI Soluções em Informática</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SOCIAL_ICONS = {
+  whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.269a.75.75 0 0 0 .921.921l5.444-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.524-5.204-1.433l-.374-.222-3.878 1.045 1.046-3.878-.222-.374A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>',
+  facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+  youtube: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>',
+  tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>',
+  email: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>'
+};
+
+const DEFAULT = {
+  seo:{ title:"Logoritmov — Escola de Matemática | Reforço & Pré-Vestibular", description:"Aprenda matemática de verdade com a Logoritmov." },
+  marca:{ nomeExibicao:"Logoritmov", professor:"Prof. Vinícius", subtituloHeader:"Escola de Matemática", subtituloFooter:"Escola de Matemática — Tudo sobre Matemática" },
+  imagens:{ logo:"https://imagem.infro.com.br/uploads/per_11bef7b0.jpg", fotoPerfil:"https://imagem.infro.com.br/uploads/per_012a8d04.jpg", logoMoveedu:"https://imagem.infro.com.br/uploads/per_02cf1e18.jpg" },
+  contato:{ whatsappNumero:"5561991452986", whatsappMensagem:"Olá! Gostaria de saber mais sobre os cursos da Logoritmov.", instagramUrl:"https://www.instagram.com/logaritmov/", facebookUrl:"https://www.facebook.com/profile.php?id=61578564706093", youtubeUrl:"https://www.youtube.com/@logaritmov", tiktokUrl:"#", telefone:"61 99145-2986", email:"logaritmov@gmail.com", emailSuporte:"suportelogaritmov@gmail.com" },
+  localizacao:{ endereco:"SH Mte. D'armas, Cond. Estância Mte. D'Armas V, Mod 3, Estância 5, Módulo 3, Loja 3B", cep:"73402-009", mapsUrl:"https://maps.app.goo.gl/keUVAH1BBuY6qbrJ9", mapsEmbed:"https://maps.google.com/maps?q=SH+Monte+D'Armas+Condominio+Estancia+Monte+D'Armas+V+Mod+3+Estancia+5+Modulo+3+Loja+3B+Brasilia+DF&z=15&output=embed", horarios:[{dias:"Segunda a Sexta",horas:"08h às 20h"},{dias:"Sábado",horas:"08h às 14h"}] },
+  sobre:{ paragrafos:["A <strong>Logoritmov</strong> nasceu com a missão de tornar a matemática simples, acessível e interessante para todos.","Com o <strong>Prof. Vinícius</strong> e acesso à plataforma <strong>MovEdu</strong>, o aprendizado acontece no seu ritmo — sem deixar ninguém para trás."] },
+  professor:{ bio:["Dou aula desde os <strong>16 anos de idade.</strong>","Passei em mais de 5 universidades federais, incluindo <strong>UNB, IFG, UFG e UEG.</strong>","Licenciando na <strong>Universidade Estadual de Goiás.</strong>","Filósofo licenciando pela <strong>Universidade Pro Minas.</strong>","Formação em <strong>Psicologia da Educação</strong> pela Universidade Estadual do Maranhão.","Mais de <strong>109 mil seguidores</strong> no Instagram."] },
+  cursos:[{t:"Matemática Básica",d:"Operações, frações e fundamentos sólidos para construir uma base forte.",tipo:"wa"},{t:"Reforço Escolar",d:"Apoio individualizado nos conteúdos da escola, do fundamental ao médio.",tipo:"wa"},{t:"Pré-Vestibular",d:"Preparação intensiva para ENEM e principais vestibulares do Brasil.",tipo:"wa"},{t:"Preparação para Concursos",d:"Revisão estratégica, simulados e foco total nos temas que mais caem.",tipo:"wa"},{t:"Matemática Universitária",d:"Apoio em disciplinas de cálculo, álgebra e demais matérias da graduação.",tipo:"wa"},{t:"Aulas Online",d:"Flexibilidade total com qualidade de aula presencial, de qualquer lugar.",tipo:"wa"}],
+  diferenciais:["Atendimento personalizado","Professores qualificados","Acesso à plataforma MovEdu","Material sempre atualizado","Aulas presenciais e online","Preparação para vestibulares e concursos","Ambiente moderno e acolhedor","Suporte contínuo ao aluno"],
+  depoimentos:[{n:"Mariana Silva",r:"Aprovada em Medicina",t:"As aulas do Prof. Vinícius mudaram minha relação com a matemática. Consegui a aprovação dos sonhos!"},{n:"Lucas Oliveira",r:"Ensino Médio",t:"Comecei tirando notas baixas e hoje sou referência na minha turma. A metodologia funciona de verdade."},{n:"Camila Rocha",r:"Pré-Vestibular",t:"A plataforma MovEdu é incrível! Posso estudar a qualquer hora e revisar quantas vezes precisar."},{n:"Pedro Andrade",r:"Aprovado em Engenharia",t:"Atendimento humano, aulas claras e muito conteúdo. Sem a Logoritmov eu não estaria aqui."}],
+  faqs:[{q:"As aulas são presenciais?",a:"Sim, oferecemos aulas presenciais em nossa unidade em Brasília/DF, além das opções online via WhatsApp."},{q:"Existe aula online?",a:"Sim! Você pode estudar de qualquer lugar com nossas aulas online ao vivo e gravadas."},{q:"Como funciona a plataforma MovEdu?",a:"A MovEdu é uma plataforma parceira e independente que disponibiliza videoaulas, exercícios e acompanhamento do seu progresso 24h por dia — cobrindo matemática, graduação, pós-graduação e muito mais."},{q:"Quais séries são atendidas?",a:"Atendemos do ensino fundamental ao pré-vestibular, além de preparação para concursos e matemática universitária."},{q:"Existe preparação para vestibulares?",a:"Sim, temos curso completo de Pré-Vestibular focado em ENEM e principais vestibulares."},{q:"Como compro os ebooks?",a:"Basta acessar nossa loja de ebooks. O acesso é liberado imediatamente após o pagamento."},{q:"Como faço minha matrícula?",a:"Basta clicar em Agendar Aula e nossa equipe entrará em contato pelo WhatsApp para orientar você."}],
+  footer:{ desenvolvidoPor:{ texto:"Desenvolvido por GTI Soluções em Informática", url:"https://wa.me/5561999118365" } }
+};
+
+let DATA = DEFAULT;
+
+function deepMerge(base, ov) {
+  if (Array.isArray(ov)) return ov;
+  if (ov && typeof ov === "object") {
+    const out = { ...base };
+    for (const k in ov) out[k] = (base && typeof base[k] === "object") ? deepMerge(base[k], ov[k]) : ov[k];
+    return out;
+  }
+  return ov === undefined ? base : ov;
+}
+
+function esc(s) {
+  if (!s) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+async function loadConfig() {
+  try {
+    const r = await fetch("config.json?v=" + Date.now(), { cache:"no-store" });
+    if (r.ok) DATA = deepMerge(DEFAULT, await r.json());
+  } catch(e) { console.warn("config.json não encontrado.", e); }
+}
+
+function render() {
+  const d = DATA;
+  const WA_URL = `https://wa.me/${d.contato.whatsappNumero}?text=${encodeURIComponent(d.contato.whatsappMensagem)}`;
+
+  document.title = d.seo.title;
+  const metaD = document.querySelector('meta[name="description"]');
+  if (metaD) metaD.content = d.seo.description;
+
+  document.getElementById("favicon-link").href = d.imagens.logo;
+  document.querySelectorAll("[data-wa]").forEach(el => el.href = WA_URL);
+  document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
+  document.querySelectorAll("[data-img-logo]").forEach(el => el.src = d.imagens.logo);
+document.querySelectorAll("[data-img-perfil]").forEach(el => { el.src = d.imagens.fotoPerfil; });
+document.querySelectorAll("[data-img-professor]").forEach(el => { el.src = d.imagens.fotoProfessor; }); // ← adicionar aqui
+  document.querySelectorAll("[data-brand-name]").forEach(el => el.textContent = d.marca.nomeExibicao);
+  document.querySelectorAll("[data-brand-sub-header]").forEach(el => el.textContent = d.marca.subtituloHeader);
+  document.querySelectorAll("[data-brand-sub-footer]").forEach(el => el.textContent = d.marca.subtituloFooter);
+
+  // Sobre
+  const sob = document.getElementById("sobre-paragrafos");
+  if (sob) sob.innerHTML = d.sobre.paragrafos.map(p => `<p style="color:var(--muted);margin-top:1rem;line-height:1.8;font-size:.9375rem">${p}</p>`).join("");
+
+  // Professor bio
+  const bl = document.getElementById("bio-list");
+  if (bl) bl.innerHTML = d.professor.bio.map(b => `<li><span class="bio-dot"></span><span>${b}</span></li>`).join("");
+
+  // Cursos — todos linkam para WhatsApp
+  const cg = document.getElementById("cursos-grid");
+  if (cg) cg.innerHTML = d.cursos.map((c,i) => `
+    <div class="rv" style="transition-delay:${i*55}ms">
+      <div class="curso-card">
+        <div class="curso-num">${String(i+1).padStart(2,"0")}</div>
+        <h3>${esc(c.t)}</h3>
+        <p>${esc(c.d)}</p>
+        <div class="curso-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.269a.75.75 0 0 0 .921.921l5.444-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.524-5.204-1.433l-.374-.222-3.878 1.045 1.046-3.878-.222-.374A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Agendar via WhatsApp
+        </div>
+        <a class="curso-link" href="${WA_URL}">Falar com o Prof. →</a>
+      </div>
+    </div>`).join("");
+
+  // Diferenciais
+  const dg = document.getElementById("diffs-grid");
+  if (dg) dg.innerHTML = d.diferenciais.map((item,i) => `
+    <div class="rv" style="transition-delay:${i*40}ms">
+      <div class="diff-card">
+        <span class="diff-ck">✓</span>
+        <span class="diff-label">${esc(item)}</span>
+      </div>
+    </div>`).join("");
+
+  // Depoimentos slider
+  const track = document.getElementById("slider-track");
+  const dotsEl = document.getElementById("slider-dots");
+  if (track && dotsEl) {
+    track.innerHTML = d.depoimentos.map(dep => `
+      <div class="slide">
+        <div class="dep-card">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-quote">"${esc(dep.t)}"</p>
+          <div class="dep-author">
+            <div class="dep-avatar">${dep.n.charAt(0)}</div>
+            <div><div class="dep-name">${esc(dep.n)}</div><div class="dep-role">${esc(dep.r)}</div></div>
+          </div>
+        </div>
+      </div>`).join("");
+    dotsEl.innerHTML = d.depoimentos.map((_,i) => `<button class="dot${i===0?" on":""}" data-i="${i}"></button>`).join("");
+    initSlider();
+  }
+
+  // FAQ
+  const fl = document.getElementById("faq-list");
+  if (fl) {
+    fl.innerHTML = d.faqs.map((f,i) => `
+      <div class="rv" style="transition-delay:${i*40}ms">
+        <div class="faq-item${i===0?" open":""}">
+          <button class="faq-q" type="button" aria-expanded="${i===0}">
+            <span class="faq-q-text">${esc(f.q)}</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-a"><p>${esc(f.a)}</p></div>
+        </div>
+      </div>`).join("");
+    fl.addEventListener("click", e => {
+      const btn = e.target.closest(".faq-q");
+      if (!btn) return;
+      const item = btn.closest(".faq-item");
+      const open = item.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open);
+    });
+  }
+
+  // Localização
+  const loc = d.localizacao;
+  const endEl = document.getElementById("local-endereco");
+  if (endEl) endEl.textContent = loc.endereco + (loc.cep ? " — " + loc.cep : "");
+  const telEl = document.getElementById("local-tel");
+  if (telEl) telEl.textContent = d.contato.telefone;
+  const hoEl = document.getElementById("local-horarios");
+  if (hoEl && loc.horarios) hoEl.innerHTML = loc.horarios.map(h => `<div>${esc(h.dias)}: <strong>${esc(h.horas)}</strong></div>`).join("");
+  const mapLink = document.getElementById("maps-link");
+  if (mapLink) mapLink.href = loc.mapsUrl;
+  const mapIframe = document.getElementById("map-iframe");
+  if (mapIframe) mapIframe.src = loc.mapsEmbed;
+
+  // Footer
+  const fEnd = document.getElementById("foot-endereco");
+  if (fEnd) fEnd.textContent = loc.endereco;
+  const fTel = document.getElementById("foot-tel");
+  if (fTel) fTel.textContent = d.contato.telefone;
+  const fCursos = document.getElementById("foot-cursos");
+  if (fCursos) fCursos.innerHTML = d.cursos.map(c => `<li><a href="#cursos">${esc(c.t)}</a></li>`).join("");
+
+  // Redes sociais
+  const socLinks = [
+    { key:"whatsapp",  href: WA_URL,                      label:"WhatsApp" },
+    { key:"instagram", href: d.contato.instagramUrl,      label:"Instagram" },
+    { key:"facebook",  href: d.contato.facebookUrl,       label:"Facebook" },
+    { key:"youtube",   href: d.contato.youtubeUrl,        label:"YouTube" },
+    { key:"tiktok",    href: d.contato.tiktokUrl,         label:"TikTok" },
+    { key:"email",     href: `mailto:${d.contato.email}`, label:"E-mail" },
+  ].filter(s => s.href && s.href !== "#");
+
+  const fsocs = document.getElementById("foot-socs");
+  if (fsocs) fsocs.innerHTML = socLinks.map(s => `
+    <a class="foot-soc" href="${esc(s.href)}" target="${s.key==='email'?'_self':'_blank'}" rel="noopener" aria-label="${s.label}">
+      ${SOCIAL_ICONS[s.key]}
+    </a>`).join("");
+
+  const socCTA = document.getElementById("socials-cta");
+  if (socCTA) socCTA.innerHTML = socLinks.map(s => `
+    <a href="${esc(s.href)}" target="${s.key==='email'?'_self':'_blank'}" rel="noopener"
+       style="display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1.1rem;border-radius:9999px;border:1px solid rgba(255,212,0,.25);background:rgba(255,212,0,.07);color:var(--fg);font-size:.8125rem;font-weight:500;transition:all .25s"
+       onmouseover="this.style.borderColor='rgba(255,212,0,.5)';this.style.color='var(--accent)'"
+       onmouseout="this.style.borderColor='rgba(255,212,0,.25)';this.style.color='var(--fg)'">
+      <span style="width:1rem;height:1rem;display:grid;place-items:center">${SOCIAL_ICONS[s.key]}</span>
+      ${s.label}
+    </a>`).join("");
+
+  // Footer dev
+  const devLink = document.getElementById("footer-dev-link");
+  const devText = document.getElementById("footer-dev-text");
+  if (devLink && d.footer.desenvolvidoPor) devLink.href = d.footer.desenvolvidoPor.url;
+  if (devText && d.footer.desenvolvidoPor) devText.textContent = d.footer.desenvolvidoPor.texto;
+
+  // Reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold:.1 });
+  document.querySelectorAll(".rv").forEach(el => io.observe(el));
+}
+
+function initSlider() {
+  const track = document.getElementById("slider-track");
+  const dotsEl = document.querySelectorAll("#slider-dots .dot");
+  let cur = 0;
+  const goTo = i => {
+    cur = i;
+    track.style.transform = `translateX(-${i*100}%)`;
+    dotsEl.forEach((d,n) => d.classList.toggle("on", n===i));
+  };
+  dotsEl.forEach(d => d.addEventListener("click", () => goTo(+d.dataset.i)));
+  let timer = setInterval(() => goTo((cur+1) % dotsEl.length), 5500);
+  let sx = 0;
+  track.addEventListener("touchstart", e => { sx = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+  track.addEventListener("touchend", e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) goTo((cur + (dx<0?1:-1) + dotsEl.length) % dotsEl.length);
+    timer = setInterval(() => goTo((cur+1) % dotsEl.length), 5500);
+  }, {passive:true});
+}
+
+window.addEventListener("scroll", () => {
+  document.getElementById("hdr").classList.toggle("scrolled", scrollY > 24);
+}, {passive:true});
+
+function initHam() {
+  const ham = document.getElementById("hamburger");
+  const menu = document.getElementById("mobile-menu");
+  const close = () => { ham.classList.remove("open"); menu.classList.remove("open"); document.body.style.overflow=""; ham.setAttribute("aria-expanded","false"); };
+  ham.addEventListener("click", () => {
+    const open = ham.classList.toggle("open");
+    menu.classList.toggle("open", open);
+    document.body.style.overflow = open ? "hidden" : "";
+    ham.setAttribute("aria-expanded", open);
+  });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadConfig();
+  render();
+  initHam();
+});
+</script>
+</body>
+</html>

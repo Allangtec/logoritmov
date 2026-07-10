@@ -1,0 +1,94 @@
+{
+  "seo": {
+    "title": "Logoritmov — Escola de Matemática | Reforço & Pré-Vestibular",
+    "description": "Aprenda matemática de verdade com a Logoritmov. Reforço escolar, pré-vestibular, acompanhamento individual e acesso à plataforma MovEdu."
+  },
+  "marca": {
+    "nomeExibicao": "Logoritmov",
+    "professor": "Prof. Vinícius",
+    "subtituloHeader": "Escola de Matemática",
+    "subtituloFooter": "Escola de Matemática — Tudo sobre Matemática"
+  },
+  "imagens": {
+    "logo": "https://imagem.infro.com.br/uploads/per_11bef7b0.jpg",
+    "fotoPerfil": "https://imagem.infro.com.br/uploads/per_3a740e3b.png",
+    "fotoProfessor": "https://imagem.infro.com.br/uploads/per_932c6b0d.png",
+    "logoMoveedu": "https://imagem.infro.com.br/uploads/per_02cf1e18.jpg"
+  },
+  "contato": {
+    "whatsappNumero": "5561991452986",
+    "whatsappMensagem": "Olá! Gostaria de saber mais sobre os cursos da Logoritmov.",
+    "instagramUrl": "https://www.instagram.com/logaritmov/",
+    "facebookUrl": "https://www.facebook.com/profile.php?id=61578564706093",
+    "youtubeUrl": "https://www.youtube.com/@logaritmov",
+    "tiktokUrl": "#",
+    "telefone": "61 99145-2986",
+    "email": "logaritmov@gmail.com",
+    "emailSuporte": "suportelogaritmov@gmail.com"
+  },
+  "localizacao": {
+    "endereco": "SH Mte. D'armas, Cond. Estância Mte. D'Armas V, Mod 3, Estância 5, Módulo 3, Loja 3B",
+    "cep": "73402-009",
+    "mapsUrl": "https://maps.app.goo.gl/keUVAH1BBuY6qbrJ9",
+    "mapsEmbed": "https://maps.google.com/maps?q=SH+Monte+D'Armas+Condominio+Estancia+Monte+D'Armas+V+Mod+3+Estancia+5+Modulo+3+Loja+3B+Brasilia+DF&z=15&output=embed",
+    "horarios": [
+      { "dias": "Segunda a Sexta", "horas": "08h às 20h" },
+      { "dias": "Sábado",          "horas": "08h às 14h" }
+    ]
+  },
+  "sobre": {
+    "paragrafos": [
+      "A <strong>Logoritmov</strong> nasceu com a missão de tornar a matemática simples, acessível e interessante para todos. Nossa metodologia combina tecnologia, acompanhamento individual e materiais exclusivos para gerar resultados concretos.",
+      "Seja para superar dificuldades no ensino fundamental, se destacar no médio ou conquistar a aprovação no vestibular, temos o caminho certo para você. Com o <strong>Prof. Vinícius</strong> e acesso à plataforma <strong>MovEdu</strong>, o aprendizado acontece no seu ritmo — sem deixar ninguém para trás."
+    ]
+  },
+  "professor": {
+    "bio": [
+      "Dou aula desde os <strong>16 anos de idade.</strong>",
+      "Passei em mais de 5 universidades federais, incluindo <strong>UNB, IFG, UFG e UEG.</strong>",
+      "Licenciando na <strong>Universidade Estadual de Goiás.</strong>",
+      "Filósofo licenciando pela <strong>Universidade Pro Minas.</strong>",
+      "Formação em <strong>Psicologia da Educação</strong> pela Universidade Estadual do Maranhão.",
+      "Mais de <strong>109 mil seguidores</strong> no Instagram."
+    ]
+  },
+  "cursos": [
+    { "t": "Matemática Básica",           "d": "Operações, frações e fundamentos sólidos para construir uma base forte.", "tipo": "wa" },
+    { "t": "Reforço Escolar",             "d": "Apoio individualizado nos conteúdos da escola, do fundamental ao médio.", "tipo": "wa" },
+    { "t": "Pré-Vestibular",              "d": "Preparação intensiva para ENEM e principais vestibulares do Brasil.", "tipo": "wa" },
+    { "t": "Preparação para Concursos",   "d": "Revisão estratégica, simulados e foco total nos temas que mais caem.", "tipo": "wa" },
+    { "t": "Matemática Universitária",    "d": "Apoio em disciplinas de cálculo, álgebra e demais matérias da graduação.", "tipo": "wa" },
+    { "t": "Aulas Online",                "d": "Flexibilidade total com qualidade de aula presencial, de qualquer lugar.", "tipo": "wa" }
+  ],
+  "diferenciais": [
+    "Atendimento personalizado",
+    "Professores qualificados",
+    "Acesso à plataforma MovEdu",
+    "Material sempre atualizado",
+    "Aulas presenciais e online",
+    "Preparação para vestibulares e concursos",
+    "Ambiente moderno e acolhedor",
+    "Suporte contínuo ao aluno"
+  ],
+  "depoimentos": [
+    { "n": "Mariana Silva",  "r": "Aprovada em Medicina",   "t": "As aulas do Prof. Vinícius mudaram minha relação com a matemática. Consegui a aprovação dos sonhos!" },
+    { "n": "Lucas Oliveira", "r": "Ensino Médio",           "t": "Comecei tirando notas baixas e hoje sou referência na minha turma. A metodologia funciona de verdade." },
+    { "n": "Camila Rocha",   "r": "Pré-Vestibular",         "t": "A plataforma MovEdu é incrível! Posso estudar a qualquer hora e revisar quantas vezes precisar." },
+    { "n": "Pedro Andrade",  "r": "Aprovado em Engenharia", "t": "Atendimento humano, aulas claras e muito conteúdo. Sem a Logoritmov eu não estaria aqui." }
+  ],
+  "faqs": [
+    { "q": "As aulas são presenciais?",            "a": "Sim, oferecemos aulas presenciais em nossa unidade em Brasília/DF, além das opções online via WhatsApp." },
+    { "q": "Existe aula online?",                  "a": "Sim! Você pode estudar de qualquer lugar com nossas aulas online ao vivo e gravadas." },
+    { "q": "Como funciona a plataforma MovEdu?",   "a": "A MovEdu é uma plataforma parceira e independente que disponibiliza videoaulas, exercícios e acompanhamento do seu progresso 24h por dia — cobrindo matemática, graduação, pós-graduação e muito mais." },
+    { "q": "Quais séries são atendidas?",          "a": "Atendemos do ensino fundamental ao pré-vestibular, além de preparação para concursos e matemática universitária." },
+    { "q": "Existe preparação para vestibulares?", "a": "Sim, temos curso completo de Pré-Vestibular focado em ENEM e principais vestibulares." },
+    { "q": "Como compro os ebooks?",               "a": "Basta acessar nossa loja de ebooks. O acesso é liberado imediatamente após o pagamento. Ebooks a partir de R$ 25,99." },
+    { "q": "Como faço minha matrícula?",           "a": "Basta clicar em Agendar Aula e nossa equipe entrará em contato pelo WhatsApp para orientar você." }
+  ],
+  "footer": {
+    "desenvolvidoPor": {
+      "texto": "Desenvolvido por GTI Soluções em Informática",
+      "url": "https://wa.me/5561999118365"
+    }
+  }
+}
