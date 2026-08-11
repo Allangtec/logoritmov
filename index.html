@@ -53,7 +53,7 @@ section{padding:5.5rem 0}
 .sec-head h2{font-size:clamp(1.75rem,4vw,2.75rem);margin-top:.625rem}
 .sec-head p{margin-top:.75rem;color:var(--muted);max-width:36rem;font-size:1rem;line-height:1.75}
 .center{text-align:center}
-.center .sec-head p{margin-left:auto;margin-right:auto}
+.center.sec-head p,.center .sec-head p{margin-left:auto;margin-right:auto}
 
 /* ── BUTTONS ────────────────────────────────────────────────── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;padding:.85rem 1.625rem;font-weight:600;font-size:.9375rem;transition:all .25s ease;cursor:pointer;border:0;white-space:nowrap;font-family:var(--font-body)}
@@ -169,6 +169,36 @@ section{padding:5.5rem 0}
 .curso-link{display:inline-flex;align-items:center;gap:.375rem;margin-top:1.25rem;font-size:.8rem;font-weight:600;color:var(--accent);transition:gap .2s}
 .curso-card:hover .curso-link{gap:.625rem}
 
+/* ── PARCEIRO UNIAPAR ───────────────────────────────────────── */
+.partner-strip{
+  margin-top:2.5rem;
+  border:1px solid var(--border-a);
+  border-radius:var(--r-lg);
+  background:linear-gradient(135deg,rgba(255,212,0,.08),transparent);
+  padding:2rem;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+}
+.partner-strip{align-items:flex-start}
+.partner-strip-left{display:flex;align-items:flex-start;gap:1.5rem;flex:1;min-width:260px}
+.partner-logo{width:4.5rem;height:4.5rem;border-radius:.875rem;background:#fff;padding:.625rem;display:grid;place-items:center;flex-shrink:0;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+@media(min-width:640px){.partner-logo{width:6rem;height:6rem;padding:.75rem;border-radius:1rem}}
+.partner-logo img{width:100%;height:100%;object-fit:contain}
+.partner-strip h4{font-size:1.0625rem;font-weight:600;color:var(--fg);line-height:1.3}
+.partner-strip p{margin-top:.25rem;font-size:.8125rem;color:var(--muted);max-width:32rem;line-height:1.6}
+.uniapar-tag{font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.375rem}
+.uniapar-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:.875rem}
+.uniapar-modalidade{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:var(--accent);color:#000;padding:.3rem .7rem;border-radius:9999px;flex-shrink:0}
+.uniapar-list{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
+.uniapar-list li{font-size:.75rem;color:rgba(240,237,230,.8);background:rgba(255,255,255,.05);border:1px solid var(--border);padding:.3rem .75rem;border-radius:9999px}
+.uniapar-emec{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.7rem;color:var(--accent);font-weight:600;letter-spacing:.02em}
+.partner-strip-cta{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.625rem;flex-shrink:0;align-self:center;margin:0 auto}
+.partner-cta-phone{font-size:.75rem;color:var(--muted);font-weight:500}
+.partner-cta-label{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;white-space:nowrap}
+
 /* ── MOVEEDU ─────────────────────────────────────────────────── */
 .plat-grid{display:grid;gap:3.5rem;align-items:center;grid-template-columns:1fr}
 @media(min-width:860px){.plat-grid{grid-template-columns:1fr 1fr;gap:4.5rem}}
@@ -187,8 +217,10 @@ section{padding:5.5rem 0}
 .plat-area{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:.875rem;padding:.875rem 1rem;font-size:.8rem;color:var(--muted);transition:all .25s;display:flex;align-items:center;gap:.5rem}
 .plat-area:hover{border-color:var(--border-a);color:var(--fg);background:rgba(255,212,0,.04)}
 .plat-area-dot{width:.4rem;height:.4rem;border-radius:50%;background:var(--accent);flex-shrink:0}
+.movedu-stat{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-dim);border:1px solid var(--border-a);border-radius:9999px;padding:.5rem 1.1rem;font-size:.8125rem;color:var(--fg);margin-bottom:1.25rem}
+.movedu-stat strong{color:var(--accent);font-family:var(--font-display);font-size:1.05rem;font-weight:600}
 
-/* ── EBOOKS ──────────────────────────────────────────────────── */
+/* ── EBOOKS / KITS ───────────────────────────────────────────── */
 .ebook-banner{position:relative;overflow:hidden;border-radius:var(--r-lg);border:1px solid var(--border-a);background:linear-gradient(135deg,rgba(255,212,0,.1) 0%,rgba(255,212,0,.03) 100%);padding:3.5rem 2.5rem}
 @media(min-width:700px){.ebook-banner{padding:4rem 3.5rem}}
 .ebook-banner::before{content:"";position:absolute;top:-6rem;right:-6rem;width:28rem;height:28rem;background:radial-gradient(ellipse,rgba(255,212,0,.15),transparent 65%);filter:blur(48px);pointer-events:none}
@@ -207,6 +239,14 @@ section{padding:5.5rem 0}
 .ebook-price-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
 .ebook-price{font-family:var(--font-display);font-size:2.25rem;font-weight:600;color:var(--accent);line-height:1}
 .ebook-price-sub{font-size:.7rem;color:var(--muted);margin-top:.25rem}
+
+/* Kits grid (2 cards lado a lado) */
+.kits-grid{display:grid;gap:1.5rem;grid-template-columns:1fr;margin-top:2rem}
+@media(min-width:860px){.kits-grid{grid-template-columns:1fr 1fr}}
+.kits-grid .ebook-banner{padding:2.5rem 2rem;display:flex;flex-direction:column;height:100%}
+.kits-grid .ebook-inner{grid-template-columns:1fr;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.kits-grid .ebook-cta-col{align-items:stretch;min-width:0;margin-top:auto}
+.kits-head{margin-top:3.5rem;margin-bottom:0}
 
 /* ── DIFERENCIAIS ────────────────────────────────────────────── */
 .diffs-grid{display:grid;gap:1rem;grid-template-columns:1fr;margin-top:2.5rem}
@@ -246,13 +286,29 @@ section{padding:5.5rem 0}
 .faq-a p{font-size:.875rem;color:var(--muted);line-height:1.75;padding:.25rem 1.375rem 1.375rem}
 
 /* ── LOCALIZAÇÃO — REDESENHADO ───────────────────────────────── */
+.local-photo-wrap{
+  position:relative;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  border:1px solid var(--border-a);
+  box-shadow:var(--shadow-a);
+  margin-top:3rem;
+  max-height:560px;
+  background:linear-gradient(160deg,rgba(255,212,0,.08),var(--bg2) 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.local-photo-wrap img{width:100%;height:100%;max-height:560px;object-fit:contain;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.local-photo-wrap:hover img{transform:scale(1.02)}
+@media(min-width:760px){.local-photo-wrap{max-height:620px}.local-photo-wrap img{max-height:620px}}
 .local-card{
   background:var(--card);
   border:1px solid var(--border-a);
   border-radius:var(--r-lg);
   overflow:hidden;
   box-shadow:var(--shadow);
-  margin-top:3rem;
+  margin-top:1.5rem;
 }
 .local-map{width:100%;height:360px;border:0;display:block;filter:grayscale(20%) contrast(1.1) brightness(.85)}
 .local-body{
@@ -389,7 +445,7 @@ section{padding:5.5rem 0}
         </div>
         <div class="hero-trust">
           <span class="hero-stars">★★★★★</span>
-          <span>4.9/5 · +109 mil seguidores · @logaritmov</span>
+          <span>4.9/5 · +116 mil seguidores · @logaritmov</span>
         </div>
       </div>
       <div class="rv" style="transition-delay:.12s">
@@ -402,7 +458,7 @@ section{padding:5.5rem 0}
             <div><div class="fc-small">Satisfação dos alunos</div><div class="fc-big">Metodologia própria</div></div>
           </div>
           <div class="float-card right">
-            <div class="fc-icon">+109k</div>
+            <div class="fc-icon">+116k</div>
             <div><div class="fc-small">Seguidores</div><div class="fc-big">@logaritmov</div></div>
           </div>
         </div>
@@ -477,6 +533,31 @@ section{padding:5.5rem 0}
       <p>A Logoritmov é especialista em matemática — do reforço escolar, pré-vestibular, concursos e até mesmo matemática universitária. Aulas presenciais em Brasília/DF ou online pelo WhatsApp.</p>
     </div>
     <div class="cursos-grid" id="cursos-grid"></div>
+
+    <!-- PARCEIRO UNIAPAR — Graduação e Tecnólogo -->
+    <div class="partner-strip rv">
+      <div class="partner-strip-left">
+        <div class="partner-logo">
+          <img src="https://a.imagem.app/GX0iVJ.png" alt="Logo UNIAPAR" loading="lazy"/>
+        </div>
+        <div>
+          <span class="uniapar-tag" id="uniapar-tag">Grupo UNIAPAR Educação</span>
+          <h4 id="uniapar-titulo">Invista no seu futuro, transforme sua história!</h4>
+          <p>Em parceria com a Logoritmov, oferecemos cursos presenciais de graduação e tecnólogo.</p>
+          <div class="uniapar-meta">
+            <span class="uniapar-modalidade" id="uniapar-modalidade">Presencial</span>
+            <ul class="uniapar-list" id="uniapar-cursos"></ul>
+          </div>
+          <span class="uniapar-emec" id="uniapar-emec">✓ Todos os cursos reconhecidos pelo E-MEC</span>
+        </div>
+      </div>
+      <div class="partner-strip-cta">
+        <span class="partner-cta-label">Fale com um de nossos representantes</span>
+        <a class="btn btn-primary" id="uniapar-wa" href="#" target="_blank" rel="noopener">Entrar em Contato</a>
+        <span class="partner-cta-phone" id="uniapar-tel-display">61 99145-2986</span>
+      </div>
+    </div>
+
     <div style="margin-top:2.5rem;text-align:center">
       <p style="color:var(--muted);font-size:.875rem;margin-bottom:1rem">Quer outros conteúdos além da matemática? Conheça a plataforma MovEdu.</p>
       <a class="btn btn-ghost" href="https://movedu.tec.br" target="_blank" rel="noopener">Ver todos os cursos na MovEdu →</a>
@@ -511,6 +592,50 @@ section{padding:5.5rem 0}
         </div>
       </div>
     </div>
+
+    <!-- KITS E MATERIAIS EXTRAS -->
+    <div class="center sec-head kits-head rv">
+      <span class="eyebrow">Materiais Extras</span>
+      <h2 style="font-size:clamp(1.5rem,3.5vw,2.25rem)">Kits e coleções para <span class="text-a">ir além</span></h2>
+      <p>Conteúdo pronto pra professores e para quem quer se aprofundar do plano de aula à estante de referência.</p>
+    </div>
+    <div class="kits-grid">
+      <div class="ebook-banner rv">
+        <div class="ebook-inner">
+          <div>
+            <div class="ebook-badge">🧮 Kit Completo</div>
+            <h2 class="ebook-title" style="font-size:clamp(1.25rem,3vw,1.75rem)">Kit Professor de <span>Matemática</span></h2>
+            <p class="ebook-desc" style="font-size:.875rem">Exercícios editáveis, planos de aula e avaliações prontas — tudo o que você precisa pra dar aula sem perder o fim de semana.</p>
+            <div class="ebook-feats">
+              <span class="ebook-feat">Exercícios editáveis</span>
+              <span class="ebook-feat">Planos de aula</span>
+              <span class="ebook-feat">Avaliações prontas</span>
+            </div>
+          </div>
+          <div class="ebook-cta-col">
+            <a class="btn btn-primary" href="https://pay.hotmart.com/E107089210L?bid=1786386051378" target="_blank" rel="noopener" style="width:100%;justify-content:center">Garantir o Kit →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ebook-banner rv" style="transition-delay:.08s">
+        <div class="ebook-inner">
+          <div>
+            <div class="ebook-badge">📖 Coleção</div>
+            <h2 class="ebook-title" style="font-size:clamp(1.25rem,3vw,1.75rem)">100 Melhores Livros de <span>Matemática e Cálculo</span></h2>
+            <p class="ebook-desc" style="font-size:.875rem">Uma seleção completa de referências pra aprofundar seu conteúdo — do básico ao cálculo avançado.</p>
+            <div class="ebook-feats">
+              <span class="ebook-feat">100 livros selecionados</span>
+              <span class="ebook-feat">Livros de cálculo</span>
+              <span class="ebook-feat">Acesso vitalício</span>
+            </div>
+          </div>
+          <div class="ebook-cta-col">
+            <a class="btn btn-primary" href="https://pay.hotmart.com/Y107097127D?bid=1786388915140" target="_blank" rel="noopener" style="width:100%;justify-content:center">Garantir a Coleção →</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -529,6 +654,8 @@ section{padding:5.5rem 0}
           <h2>Mais do que matemática — estude na <span class="text-a">MovEdu</span></h2>
           <p>A MovEdu é uma plataforma independente e completa de ensino. Você pode ter acesso a videoaulas, exercícios e acompanhamento em diversas áreas do conhecimento — incluindo cursos de <strong style="color:var(--fg)">graduação e pós-graduação</strong> — a qualquer hora e de qualquer lugar.</p>
         </div>
+
+        <div class="movedu-stat"><strong id="movedu-total">1.300+</strong> cursos disponíveis na plataforma</div>
 
         <!-- Áreas disponíveis na MovEdu -->
         <p style="font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-weight:600;margin-bottom:.75rem">Áreas disponíveis</p>
@@ -604,6 +731,10 @@ section{padding:5.5rem 0}
       <span class="eyebrow">Localização</span>
       <h2>Venha nos <span class="text-a">conhecer</span></h2>
       <p>Estamos prontos para receber você e mostrar como a matemática pode ser incrível.</p>
+    </div>
+
+    <div class="local-photo-wrap rv">
+      <img src="https://a.imagem.app/GX0b8S.jpeg" alt="Polo Logoritmov" loading="lazy"/>
     </div>
 
     <div class="local-card rv">
@@ -754,13 +885,15 @@ const SOCIAL_ICONS = {
 
 const DEFAULT = {
   seo:{ title:"Logoritmov — Escola de Matemática | Reforço & Pré-Vestibular", description:"Aprenda matemática de verdade com a Logoritmov." },
-  marca:{ nomeExibicao:"Logoritmov", professor:"Prof. Vinícius", subtituloHeader:"Escola de Matemática", subtituloFooter:"Escola de Matemática — Tudo sobre Matemática" },
+  marca:{ nomeExibicao:"Logoritmov", professor:"Prof. Vinícius", subtituloHeader:"Polo Educacional Logoritmov", subtituloFooter:"Polo Educacional Logoritmov — Parceiro oficial MovEdu" },
   imagens:{ logo:"https://imagem.infro.com.br/uploads/per_11bef7b0.jpg", fotoPerfil:"https://imagem.infro.com.br/uploads/per_012a8d04.jpg", logoMoveedu:"https://imagem.infro.com.br/uploads/per_02cf1e18.jpg" },
   contato:{ whatsappNumero:"5561991452986", whatsappMensagem:"Olá! Gostaria de saber mais sobre os cursos da Logoritmov.", instagramUrl:"https://www.instagram.com/logaritmov/", facebookUrl:"https://www.facebook.com/profile.php?id=61578564706093", youtubeUrl:"https://www.youtube.com/@logaritmov", tiktokUrl:"#", telefone:"61 99145-2986", email:"logaritmov@gmail.com", emailSuporte:"suportelogaritmov@gmail.com" },
   localizacao:{ endereco:"SH Mte. D'armas, Cond. Estância Mte. D'Armas V, Mod 3, Estância 5, Módulo 3, Loja 3B", cep:"73402-009", mapsUrl:"https://maps.app.goo.gl/keUVAH1BBuY6qbrJ9", mapsEmbed:"https://maps.google.com/maps?q=SH+Monte+D'Armas+Condominio+Estancia+Monte+D'Armas+V+Mod+3+Estancia+5+Modulo+3+Loja+3B+Brasilia+DF&z=15&output=embed", horarios:[{dias:"Segunda a Sexta",horas:"08h às 20h"},{dias:"Sábado",horas:"08h às 14h"}] },
   sobre:{ paragrafos:["A <strong>Logoritmov</strong> nasceu com a missão de tornar a matemática simples, acessível e interessante para todos.","Com o <strong>Prof. Vinícius</strong> e acesso à plataforma <strong>MovEdu</strong>, o aprendizado acontece no seu ritmo — sem deixar ninguém para trás."] },
-  professor:{ bio:["Dou aula desde os <strong>16 anos de idade.</strong>","Passei em mais de 5 universidades federais, incluindo <strong>UNB, IFG, UFG e UEG.</strong>","Licenciando na <strong>Universidade Estadual de Goiás.</strong>","Filósofo licenciando pela <strong>Universidade Pro Minas.</strong>","Formação em <strong>Psicologia da Educação</strong> pela Universidade Estadual do Maranhão.","Mais de <strong>109 mil seguidores</strong> no Instagram."] },
+  professor:{ bio:["Dou aula desde os <strong>16 anos de idade.</strong>","Passei em mais de 5 universidades federais, incluindo <strong>UNB, IFG, UFG e UEG.</strong>","Licenciando na <strong>Universidade Estadual de Goiás.</strong>","Filósofo licenciando pela <strong>Universidade Pro Minas.</strong>","Formação em <strong>Psicologia da Educação</strong> pela Universidade Estadual do Maranhão.","Metodologia e Prática do Ensino de Matemática — <strong>Unifamec.</strong>","Ensino da Filosofia — <strong>Unifamec.</strong>","Neuropsicopedagogia e Psicopedagogia — <strong>Unifamec.</strong>","História da Matemática e da Física — <strong>Unifamec.</strong>","Mais de <strong>116 mil seguidores</strong> no Instagram."] },
   cursos:[{t:"Matemática Básica",d:"Operações, frações e fundamentos sólidos para construir uma base forte.",tipo:"wa"},{t:"Reforço Escolar",d:"Apoio individualizado nos conteúdos da escola, do fundamental ao médio.",tipo:"wa"},{t:"Pré-Vestibular",d:"Preparação intensiva para ENEM e principais vestibulares do Brasil.",tipo:"wa"},{t:"Preparação para Concursos",d:"Revisão estratégica, simulados e foco total nos temas que mais caem.",tipo:"wa"},{t:"Matemática Universitária",d:"Apoio em disciplinas de cálculo, álgebra e demais matérias da graduação.",tipo:"wa"},{t:"Aulas Online",d:"Flexibilidade total com qualidade de aula presencial, de qualquer lugar.",tipo:"wa"}],
+  uniapar:{ tagBadge:"Grupo UNIAPAR Educação", titulo:"Invista no seu futuro, transforme sua história!", modalidade:"100% EAD", cursos:["Graduação","Tecnólogo","Tecnólogo por Competência","MBA","EJA","Ensino Médio","Ensino Fundamental"], selo:"Todos os cursos reconhecidos pelo E-MEC", whatsappNumero:"5561991452986", telefoneExibicao:"61 99145-2986", whatsappMensagem:"Olá! Gostaria de falar com um representante da UNIAPAR sobre os cursos em parceria com a Logoritmov." },
+  movedu:{ totalCursos:"1.300+" },
   diferenciais:["Atendimento personalizado","Professores qualificados","Acesso à plataforma MovEdu","Material sempre atualizado","Aulas presenciais e online","Preparação para vestibulares e concursos","Ambiente moderno e acolhedor","Suporte contínuo ao aluno"],
   depoimentos:[{n:"Mariana Silva",r:"Aprovada em Medicina",t:"As aulas do Prof. Vinícius mudaram minha relação com a matemática. Consegui a aprovação dos sonhos!"},{n:"Lucas Oliveira",r:"Ensino Médio",t:"Comecei tirando notas baixas e hoje sou referência na minha turma. A metodologia funciona de verdade."},{n:"Camila Rocha",r:"Pré-Vestibular",t:"A plataforma MovEdu é incrível! Posso estudar a qualquer hora e revisar quantas vezes precisar."},{n:"Pedro Andrade",r:"Aprovado em Engenharia",t:"Atendimento humano, aulas claras e muito conteúdo. Sem a Logoritmov eu não estaria aqui."}],
   faqs:[{q:"As aulas são presenciais?",a:"Sim, oferecemos aulas presenciais em nossa unidade em Brasília/DF, além das opções online via WhatsApp."},{q:"Existe aula online?",a:"Sim! Você pode estudar de qualquer lugar com nossas aulas online ao vivo e gravadas."},{q:"Como funciona a plataforma MovEdu?",a:"A MovEdu é uma plataforma parceira e independente que disponibiliza videoaulas, exercícios e acompanhamento do seu progresso 24h por dia — cobrindo matemática, graduação, pós-graduação e muito mais."},{q:"Quais séries são atendidas?",a:"Atendemos do ensino fundamental ao pré-vestibular, além de preparação para concursos e matemática universitária."},{q:"Existe preparação para vestibulares?",a:"Sim, temos curso completo de Pré-Vestibular focado em ENEM e principais vestibulares."},{q:"Como compro os ebooks?",a:"Basta acessar nossa loja de ebooks. O acesso é liberado imediatamente após o pagamento."},{q:"Como faço minha matrícula?",a:"Basta clicar em Agendar Aula e nossa equipe entrará em contato pelo WhatsApp para orientar você."}],
@@ -832,6 +965,33 @@ document.querySelectorAll("[data-img-professor]").forEach(el => { el.src = d.ima
         <a class="curso-link" href="${WA_URL}">Falar com o Prof. →</a>
       </div>
     </div>`).join("");
+
+  // UNIAPAR
+  if (d.uniapar) {
+    const uTag = document.getElementById("uniapar-tag");
+    if (uTag) uTag.textContent = d.uniapar.tagBadge;
+    const uTitulo = document.getElementById("uniapar-titulo");
+    if (uTitulo) uTitulo.textContent = d.uniapar.titulo;
+    const uModal = document.getElementById("uniapar-modalidade");
+    if (uModal) uModal.textContent = d.uniapar.modalidade;
+    const uCursos = document.getElementById("uniapar-cursos");
+    if (uCursos) uCursos.innerHTML = d.uniapar.cursos.map(c => `<li>${esc(c)}</li>`).join("");
+    const uEmec = document.getElementById("uniapar-emec");
+    if (uEmec) uEmec.textContent = "✓ " + d.uniapar.selo;
+    const uWa = document.getElementById("uniapar-wa");
+    if (uWa) {
+      uWa.href = `https://wa.me/${d.uniapar.whatsappNumero}?text=${encodeURIComponent(d.uniapar.whatsappMensagem)}`;
+      uWa.textContent = "Entrar em Contato";
+    }
+    const uTelDisplay = document.getElementById("uniapar-tel-display");
+    if (uTelDisplay) uTelDisplay.textContent = d.uniapar.telefoneExibicao || d.uniapar.whatsappNumero;
+  }
+
+  // MovEdu — total de cursos
+  if (d.movedu) {
+    const mTotal = document.getElementById("movedu-total");
+    if (mTotal) mTotal.textContent = d.movedu.totalCursos;
+  }
 
   // Diferenciais
   const dg = document.getElementById("diffs-grid");
