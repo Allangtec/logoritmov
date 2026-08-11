@@ -7,12 +7,12 @@
     "nomeExibicao": "Logoritmov",
     "professor": "Prof. Vinícius",
     "subtituloHeader": "Escola de Matemática",
-    "subtituloFooter": "Escola de Matemática — Tudo sobre Matemática"
+    "subtituloFooter": "Escola de Matemática Tudo sobre Matemática"
   },
   "imagens": {
     "logo": "https://imagem.infro.com.br/uploads/per_11bef7b0.jpg",
-    "fotoPerfil": "https://imagem.infro.com.br/uploads/per_3a740e3b.png",
-    "fotoProfessor": "https://imagem.infro.com.br/uploads/per_932c6b0d.png",
+    "fotoPerfil": "https://a.imagem.app/GX03LT.jpeg",
+    "fotoProfessor": "https://a.imagem.app/GX03LT.jpeg",
     "logoMoveedu": "https://imagem.infro.com.br/uploads/per_02cf1e18.jpg"
   },
   "contato": {
@@ -39,7 +39,7 @@
   "sobre": {
     "paragrafos": [
       "A <strong>Logoritmov</strong> nasceu com a missão de tornar a matemática simples, acessível e interessante para todos. Nossa metodologia combina tecnologia, acompanhamento individual e materiais exclusivos para gerar resultados concretos.",
-      "Seja para superar dificuldades no ensino fundamental, se destacar no médio ou conquistar a aprovação no vestibular, temos o caminho certo para você. Com o <strong>Prof. Vinícius</strong> e acesso à plataforma <strong>MovEdu</strong>, o aprendizado acontece no seu ritmo — sem deixar ninguém para trás."
+      "Seja para superar dificuldades no ensino fundamental, se destacar no médio ou conquistar a aprovação no vestibular, temos o caminho certo para você. Com o <strong>Prof. Vinícius</strong> e acesso à plataforma <strong>MovEdu</strong>, o aprendizado acontece no seu ritmo sem deixar ninguém para trás."
     ]
   },
   "professor": {
@@ -49,7 +49,11 @@
       "Licenciando na <strong>Universidade Estadual de Goiás.</strong>",
       "Filósofo licenciando pela <strong>Universidade Pro Minas.</strong>",
       "Formação em <strong>Psicologia da Educação</strong> pela Universidade Estadual do Maranhão.",
-      "Mais de <strong>109 mil seguidores</strong> no Instagram."
+      "Metodologia e Prática do Ensino de Matemática <strong>Unifamec.</strong>",
+      "Ensino da Filosofia <strong>Unifamec.</strong>",
+      "Neuropsicopedagogia e Psicopedagogia <strong>Unifamec.</strong>",
+      "História da Matemática e da Física <strong>Unifamec.</strong>",
+      "Mais de <strong>116 mil seguidores</strong> no Instagram."
     ]
   },
   "cursos": [
@@ -60,6 +64,19 @@
     { "t": "Matemática Universitária",    "d": "Apoio em disciplinas de cálculo, álgebra e demais matérias da graduação.", "tipo": "wa" },
     { "t": "Aulas Online",                "d": "Flexibilidade total com qualidade de aula presencial, de qualquer lugar.", "tipo": "wa" }
   ],
+  "uniapar": {
+    "tagBadge": "Grupo UNIAPAR Educação",
+    "titulo": "Invista no seu futuro, transforme sua história!",
+    "modalidade": "100% EAD",
+    "cursos": ["Graduação", "Tecnólogo", "Tecnólogo por Competência", "MBA", "EJA", "Ensino Médio", "Ensino Fundamental"],
+    "selo": "Todos os cursos reconhecidos pelo E-MEC",
+    "whatsappNumero": "5561991452986",
+    "telefoneExibicao": "61 99145-2986",
+    "whatsappMensagem": "Olá! Gostaria de falar com um representante da UNIAPAR sobre Graduação, Tecnólogo, Tecnólogo por Competência, MBA, EJA, Ensino Médio e Fundamental em parceria com a Logoritmov."
+  },
+  "movedu": {
+    "totalCursos": "1.300+"
+  },
   "diferenciais": [
     "Atendimento personalizado",
     "Professores qualificados",
@@ -79,11 +96,12 @@
   "faqs": [
     { "q": "As aulas são presenciais?",            "a": "Sim, oferecemos aulas presenciais em nossa unidade em Brasília/DF, além das opções online via WhatsApp." },
     { "q": "Existe aula online?",                  "a": "Sim! Você pode estudar de qualquer lugar com nossas aulas online ao vivo e gravadas." },
-    { "q": "Como funciona a plataforma MovEdu?",   "a": "A MovEdu é uma plataforma parceira e independente que disponibiliza videoaulas, exercícios e acompanhamento do seu progresso 24h por dia — cobrindo matemática, graduação, pós-graduação e muito mais." },
+    { "q": "Como funciona a plataforma MovEdu?",   "a": "A MovEdu é uma plataforma parceira e independente que disponibiliza mais de 1.300 cursos, videoaulas, exercícios e acompanhamento do seu progresso 24h por dia cobrindo matemática, graduação, pós-graduação e muito mais." },
     { "q": "Quais séries são atendidas?",          "a": "Atendemos do ensino fundamental ao pré-vestibular, além de preparação para concursos e matemática universitária." },
     { "q": "Existe preparação para vestibulares?", "a": "Sim, temos curso completo de Pré-Vestibular focado em ENEM e principais vestibulares." },
     { "q": "Como compro os ebooks?",               "a": "Basta acessar nossa loja de ebooks. O acesso é liberado imediatamente após o pagamento. Ebooks a partir de R$ 25,99." },
-    { "q": "Como faço minha matrícula?",           "a": "Basta clicar em Agendar Aula e nossa equipe entrará em contato pelo WhatsApp para orientar você." }
+    { "q": "Como faço minha matrícula?",           "a": "Basta clicar em Agendar Aula e nossa equipe entrará em contato pelo WhatsApp para orientar você." },
+    { "q": "Como funciona a parceria com a UNIAPAR?", "a": "A UNIAPAR é 100% EAD e oferece Graduação, Tecnólogo, Tecnólogo por Competência, MBA, EJA, Ensino Médio e Ensino Fundamental, todos reconhecidos pelo E-MEC. Fale com um representante pelo WhatsApp para saber mais." }
   ],
   "footer": {
     "desenvolvidoPor": {
