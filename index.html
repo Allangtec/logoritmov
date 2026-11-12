@@ -797,14 +797,21 @@
       .ebook-row {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
         gap: 12px;
         margin-top: 25px;
       }
       .ebook-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         border: 1px solid var(--line);
         border-radius: 14px;
         padding: 17px;
         background: #171717;
+      }
+      .ebook-card .btn {
+        margin-top: auto;
       }
       .ebook-card strong {
         display: block;
@@ -968,8 +975,19 @@
       .faq {
         background: #121212;
       }
+      .faq .intro {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+      }
+      .faq .intro p {
+        margin-right: auto;
+        margin-left: auto;
+      }
       .faq-list {
-        max-width: 850px;
+        width: min(100%, 850px);
+        margin-right: auto;
+        margin-left: auto;
         display: grid;
         gap: 9px;
       }
@@ -1651,7 +1669,7 @@
               </figure>
               <figure class="space-photo">
                 <img
-                  src="assets/outro-espaco.jpeg"
+                  src="assets/outro-espaco.jpeg.jpeg"
                   alt="Outro ângulo da sala da Logoritmov, com cadeiras de estudo, computadores e quadro"
                   loading="lazy"
                 />
