@@ -6,19 +6,21 @@
     <meta name="theme-color" content="#090909" />
     <meta
       name="description"
-      content="Logoritmov — WR Educacional. Matemática, filosofia, música, pré-vestibular, redação, apoio educacional e estudos presenciais em Brasília/DF."
+      content="Aprenda matemática de verdade com a Logoritmov. Reforço escolar, pré-vestibular, acompanhamento individual e acesso à plataforma MovEdu."
     />
     <meta
       property="og:title"
-      content="Logoritmov | Matemática, Filosofia e Música"
+      content="Logoritmov — Escola de Matemática | Reforço &amp; Pré-Vestibular"
     />
     <meta
       property="og:description"
-      content="Ensino próximo, sala de estudos equipada e acompanhamento do básico ao universitário."
+      content="Aprenda matemática de verdade com reforço escolar, pré-vestibular, acompanhamento individual e acesso à plataforma MovEdu."
     />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="assets/logo-logoritmov.jpg" />
-    <title>Logoritmov | Matemática, Filosofia e Música</title>
+    <link rel="icon" type="image/jpeg" href="assets/favicon-original.jpg" />
+    <title>
+      Logoritmov — Escola de Matemática | Reforço &amp; Pré-Vestibular
+    </title>
     <style>
       :root {
         --bg: #090909;
@@ -193,7 +195,7 @@
         min-width: 0;
       }
       .brand img {
-        width: 126px;
+        width: 48px;
         height: 48px;
         object-fit: contain;
         border-radius: 0;
@@ -602,22 +604,35 @@
       }
       .space-grid {
         display: grid;
-        grid-template-columns: 0.86fr 1.14fr;
-        gap: 48px;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 40px;
         align-items: center;
       }
+      .space-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
       .space-photo {
-        border-radius: 22px;
-        padding: 9px;
+        margin: 0;
+        border-radius: 18px;
+        padding: 8px;
         background: #e5e0d4;
         box-shadow: 0 20px 54px rgba(0, 0, 0, 0.14);
       }
       .space-photo img {
+        display: block;
         width: 100%;
-        height: auto;
-        max-height: 680px;
+        height: 330px;
         object-fit: contain;
-        border-radius: 15px;
+        border-radius: 12px;
+        background: #d8d3c8;
+      }
+      .space-photo figcaption {
+        padding: 8px 4px 2px;
+        color: #565249;
+        font-size: 0.72rem;
+        line-height: 1.35;
       }
       .photo-cap {
         font-size: 0.75rem;
@@ -798,6 +813,117 @@
         font-size: 0.82rem;
         color: var(--muted);
         margin: 8px 0 12px;
+      }
+      .ebook-card.featured {
+        color: #15130c;
+        border-color: rgba(255, 212, 0, 0.8);
+        background: linear-gradient(145deg, #ffe46a, #ffd400);
+        box-shadow: 0 14px 38px rgba(255, 212, 0, 0.16);
+      }
+      .ebook-card.featured p {
+        color: #403800;
+      }
+      .kit-label {
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 4px 8px;
+        border-radius: 5px;
+        background: #15130c;
+        color: var(--yellow);
+        font-size: 0.64rem;
+        font-weight: 850;
+        letter-spacing: 0.12em;
+      }
+      .kit-price {
+        margin: 12px 0 14px;
+        font-size: 1.55rem;
+        font-weight: 900;
+        line-height: 1.1;
+      }
+      .kit-price small {
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+      .ebook-card.featured .btn {
+        border-color: #15130c;
+        background: #15130c;
+        color: #fff;
+      }
+      .differentiators {
+        background: #0d0d0d;
+      }
+      .differential-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 12px;
+      }
+      .differential-card,
+      .testimonial-card {
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        padding: 20px;
+        background: linear-gradient(145deg, #171717, #101010);
+      }
+      .differential-card > span {
+        color: var(--yellow);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+      }
+      .differential-card h3 {
+        margin: 13px 0 7px;
+        font-size: 1rem;
+      }
+      .differential-card p,
+      .testimonial-card span {
+        color: var(--muted);
+        font-size: 0.84rem;
+        line-height: 1.6;
+      }
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .testimonial-card blockquote {
+        margin: 0 0 18px;
+        color: #f1eee5;
+        font-size: 0.97rem;
+        line-height: 1.65;
+      }
+      .testimonial-card strong,
+      .testimonial-card span {
+        display: block;
+      }
+      .testimonial-card strong {
+        margin-bottom: 3px;
+      }
+      .location-media {
+        display: grid;
+        gap: 12px;
+      }
+      .facade-card {
+        margin: 0;
+        padding: 8px;
+        border: 1px solid rgba(255, 212, 0, 0.22);
+        border-radius: 16px;
+        background: #111;
+      }
+      .facade-card img {
+        display: block;
+        width: 100%;
+        height: 245px;
+        border-radius: 10px;
+        object-fit: contain;
+        background: #171717;
+      }
+      .facade-card figcaption {
+        padding: 7px 4px 1px;
+        color: var(--muted);
+        font-size: 0.72rem;
+      }
+      .map-link {
+        justify-self: start;
       }
       .contact {
         background:
@@ -1089,7 +1215,8 @@
         .philo-cards,
         .course-grid,
         .support-grid,
-        .brand-grid {
+        .brand-grid,
+        .testimonial-grid {
           grid-template-columns: 1fr;
         }
         .profile-facts {
@@ -1153,7 +1280,9 @@
     <header class="nav">
       <div class="wrap nav-inner">
         <a class="brand" href="#inicio" aria-label="Logoritmov, início"
-          ><img src="assets/logo-logoritmov.jpg" alt="Logoritmov"
+          ><img
+            src="assets/favicon-original.jpg"
+            alt="Logo original Logoritmov"
         /></a>
         <nav class="nav-links" id="nav-links" aria-label="Navegação">
           <a href="#proposta">Nossa filosofia</a
@@ -1328,28 +1457,28 @@
               </p>
               <div class="profile-facts">
                 <div class="fact">
-                  <b>Experiência em ensino</b>Conta que dá aulas desde os 16
-                  anos.
+                  <b>Experiência em ensino</b>Dou aulas desde os 16 anos.
                 </div>
                 <div class="fact">
-                  <b>Universidades federais</b>Relata aprovação em mais de
-                  cinco, incluindo UnB, IFG, UFG e UEG.
+                  <b>Aprovado em mais de cinco universidades</b>Aprovado em mais
+                  de cinco, incluindo UnB, IFG, UFG e UEG. Sempre estudei em
+                  escola pública.
                 </div>
                 <div class="fact">
-                  <b>Licenciatura</b>Licenciando na Universidade Estadual de
-                  Goiás.
+                  <b>Matemática</b>Licenciando em Matemática na Universidade
+                  Estadual de Goiás.
                 </div>
                 <div class="fact">
                   <b>Filosofia</b>Formação em andamento pela Universidade Pro
                   Minas, conforme apresentação enviada.
                 </div>
                 <div class="fact">
-                  <b>Educação</b>Psicologia da Educação (UEMA) e estudos de
-                  ensino da matemática.
+                  <b>Psicologia da Educação</b>Formação pela Universidade
+                  Estadual do Maranhão (UEMA).
                 </div>
                 <div class="fact">
-                  <b>Neuropsicopedagogia</b>Formações em neuropsicopedagogia e
-                  psicopedagogia.
+                  <b>Neuropsicopedagogia</b>Formação em Neuropsicopedagogia e
+                  Psicopedagogia — Unifamec.
                 </div>
               </div>
               <p class="profile-footer">
@@ -1508,16 +1637,29 @@
       <section id="presencial" class="section inperson">
         <div class="wrap space-grid">
           <div class="reveal">
-            <div class="space-photo">
-              <img
-                src="assets/sala-de-estudos.jpg"
-                alt="Ambiente presencial da Logoritmov com computadores, mesas e cadeiras para estudo"
-                loading="lazy"
-              />
+            <div
+              class="space-gallery"
+              aria-label="Fotos dos ambientes de estudo da Logoritmov"
+            >
+              <figure class="space-photo">
+                <img
+                  src="assets/sala-de-estudos.jpg"
+                  alt="Sala de estudos da Logoritmov com computadores, baias e cadeiras"
+                  loading="lazy"
+                />
+                <figcaption>Estações de estudo e computadores.</figcaption>
+              </figure>
+              <figure class="space-photo">
+                <img
+                  src="assets/outro-espaco.jpeg"
+                  alt="Outro ângulo da sala da Logoritmov, com cadeiras de estudo, computadores e quadro"
+                  loading="lazy"
+                />
+                <figcaption>Outro ângulo do ambiente presencial.</figcaption>
+              </figure>
             </div>
             <p class="photo-cap">
-              Foto real do ambiente de estudos enviada para a atualização do
-              site.
+              Fotos reais dos espaços enviados para a atualização do site.
             </p>
           </div>
           <div class="reveal delay1">
@@ -1661,9 +1803,9 @@
             <span class="eyebrow">Parceiros e materiais</span>
             <h2>Mais caminhos para continuar estudando.</h2>
             <p>
-              Além das aulas presenciais, a página original apresenta a
-              plataforma MovEdu, cursos em parceria com o Grupo UNIAPAR Educação
-              e materiais digitais.
+              Também oferecemos ensino a distância pela plataforma MovEdu,
+              cursos em parceria com o Grupo UNIAPAR Educação e materiais
+              digitais.
             </p>
           </div>
           <div class="grid brand-grid">
@@ -1676,15 +1818,14 @@
                   loading="lazy"
                 />
                 <div>
-                  <span class="eyebrow">Plataforma parceira</span>
+                  <span class="eyebrow">Nossa plataforma EAD</span>
                   <h3 style="margin: 3px 0 0">MovEdu</h3>
                 </div>
               </div>
               <p>
-                A plataforma independente oferece cursos e materiais em
-                diferentes áreas. A página anterior informava mais de 1.300
-                cursos disponíveis. Consulte a plataforma para confirmar
-                catálogo, valores e condições vigentes.
+                A MovEdu é nossa plataforma de ensino a distância, com mais de
+                1.300 cursos, materiais e opções para diferentes áreas. Consulte
+                o catálogo, a disponibilidade, os valores e as condições atuais.
               </p>
               <button class="btn btn-ghost small" data-open="modal-movedu">
                 Conheça a MovEdu ↗
@@ -1699,15 +1840,15 @@
                   loading="lazy"
                 />
                 <div>
-                  <span class="eyebrow">Educação e cursos</span>
+                  <span class="eyebrow">Universitários e técnicos</span>
                   <h3 style="margin: 3px 0 0">Grupo UNIAPAR</h3>
                 </div>
               </div>
               <p>
-                Consulte as opções de graduação, tecnólogo, MBA, EJA e outras
-                ofertas educacionais divulgadas anteriormente. Modalidade,
-                reconhecimento, disponibilidade e condições devem ser
-                confirmados diretamente com o representante.
+                Cursos universitários e técnicos em modalidade 100% EAD:
+                graduação, tecnólogo, tecnólogo por competência, MBA, EJA e
+                ensino básico. Confirme curso, reconhecimento e condições com o
+                representante.
               </p>
               <button class="btn btn-ghost small" data-open="modal-uniapar">
                 Consultar cursos ↗
@@ -1717,7 +1858,9 @@
           <div class="ebook-row">
             <article class="ebook-card reveal">
               <strong>E-books de matemática</strong>
-              <p>Materiais digitais de estudo apresentados no site original.</p>
+              <p>
+                Materiais digitais de estudo, com e-books a partir de R$ 25,99.
+              </p>
               <a
                 class="btn btn-ghost small"
                 href="https://www.canva.com/design/DAHO2BhYT3Y/RWBGZdwyzlyurdQi4AVqZA/view?utm_content=DAHO2BhYT3Y&utm_campaign=designshare&utm_medium=link&utm_source=viewer"
@@ -1726,15 +1869,19 @@
                 >Ver materiais ↗</a
               >
             </article>
-            <article class="ebook-card reveal delay1">
+            <article class="ebook-card featured reveal delay1">
+              <span class="kit-label">DESTAQUE</span>
               <strong>Kit Professor de Matemática</strong>
-              <p>Kit de materiais para apoio ao planejamento e às aulas.</p>
+              <p>
+                Material para apoiar o planejamento e as aulas de matemática.
+              </p>
+              <div class="kit-price">R$ 64,00 <small>à vista</small></div>
               <a
                 class="btn btn-ghost small"
                 href="https://pay.hotmart.com/E107089210L?bid=1786386051378"
                 target="_blank"
                 rel="noopener"
-                >Ver oferta ↗</a
+                >Adquirir o kit ↗</a
               >
             </article>
             <article class="ebook-card reveal delay2">
@@ -1750,6 +1897,118 @@
                 rel="noopener"
                 >Ver oferta ↗</a
               >
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section differentiators">
+        <div class="wrap">
+          <div class="intro reveal">
+            <span class="eyebrow">Por que estudar com a Logoritmov</span>
+            <h2>Aprendizagem com acompanhamento e propósito.</h2>
+            <p>
+              Os diferenciais apresentados pela escola, reunidos em um só lugar.
+            </p>
+          </div>
+          <div class="differential-grid">
+            <article class="differential-card reveal">
+              <span>01</span>
+              <h3>Atendimento personalizado</h3>
+              <p>
+                Acompanhamento pensado de acordo com os objetivos de cada
+                estudante.
+              </p>
+            </article>
+            <article class="differential-card reveal delay1">
+              <span>02</span>
+              <h3>Professores qualificados</h3>
+              <p>
+                Orientação pedagógica para apoiar o desenvolvimento e a
+                aprendizagem.
+              </p>
+            </article>
+            <article class="differential-card reveal delay2">
+              <span>03</span>
+              <h3>Plataforma MovEdu</h3>
+              <p>
+                Acesso a cursos e materiais para continuar estudando também a
+                distância.
+              </p>
+            </article>
+            <article class="differential-card reveal delay3">
+              <span>04</span>
+              <h3>Material atualizado</h3>
+              <p>
+                Conteúdos e recursos de estudo para acompanhar as necessidades
+                dos alunos.
+              </p>
+            </article>
+            <article class="differential-card reveal">
+              <span>05</span>
+              <h3>Presencial e online</h3>
+              <p>Opções de atendimento para diferentes rotinas e lugares.</p>
+            </article>
+            <article class="differential-card reveal delay1">
+              <span>06</span>
+              <h3>Preparação direcionada</h3>
+              <p>
+                Reforço, vestibulares e concursos com estudo focado nos
+                objetivos.
+              </p>
+            </article>
+            <article class="differential-card reveal delay2">
+              <span>07</span>
+              <h3>Ambiente acolhedor</h3>
+              <p>
+                Espaço de estudo equipado e organizado para aprender com
+                conforto.
+              </p>
+            </article>
+            <article class="differential-card reveal delay3">
+              <span>08</span>
+              <h3>Suporte contínuo</h3>
+              <p>
+                Acompanhamento para que o aluno possa avançar com mais
+                segurança.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section testimonials">
+        <div class="wrap">
+          <div class="intro reveal">
+            <span class="eyebrow">Depoimentos</span>
+            <h2>Histórias de quem estudou com a Logoritmov.</h2>
+          </div>
+          <div class="testimonial-grid">
+            <article class="testimonial-card reveal">
+              <blockquote>
+                “As aulas do Prof. Vinícius mudaram minha relação com a
+                matemática. Consegui a aprovação dos sonhos!”
+              </blockquote>
+              <strong>Mariana Silva</strong><span>Aprovada em Medicina</span>
+            </article>
+            <article class="testimonial-card reveal delay1">
+              <blockquote>
+                “Comecei tirando notas baixas e hoje sou referência na minha
+                turma. A metodologia funciona de verdade.”
+              </blockquote>
+              <strong>Lucas Oliveira</strong><span>Ensino Médio</span>
+            </article>
+            <article class="testimonial-card reveal delay2">
+              <blockquote>
+                “A plataforma MovEdu é incrível! Posso estudar a qualquer hora e
+                revisar quantas vezes precisar.”
+              </blockquote>
+              <strong>Camila Rocha</strong><span>Pré-Vestibular</span>
+            </article>
+            <article class="testimonial-card reveal delay3">
+              <blockquote>
+                “Atendimento humano, aulas claras e muito conteúdo. Sem a
+                Logoritmov eu não estaria aqui.”
+              </blockquote>
+              <strong>Pedro Andrade</strong><span>Aprovado em Engenharia</span>
             </article>
           </div>
         </div>
@@ -1797,6 +2056,48 @@
               <p>
                 Fale com a equipe pelo WhatsApp para confirmar disponibilidade,
                 formato e valores atualizados.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Existe aula online?</summary>
+              <p>
+                Sim. A escola informa opções de aulas online ao vivo e gravadas.
+                Consulte a equipe para confirmar formatos e disponibilidade
+                atuais.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Como funciona a plataforma MovEdu?</summary>
+              <p>
+                A MovEdu oferece cursos, videoaulas e exercícios para estudar a
+                distância. O catálogo informado é de mais de 1.300 cursos;
+                consulte a plataforma para verificar opções e condições
+                vigentes.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Como compro os e-books?</summary>
+              <p>
+                Acesse os materiais digitais pelos links da página. O catálogo
+                informado inclui e-books a partir de R$ 25,99; preços e
+                disponibilidade podem mudar.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Como faço minha matrícula?</summary>
+              <p>
+                Clique em “Chamar no WhatsApp” para conversar com a equipe,
+                informar seu objetivo e receber orientação sobre matrícula e
+                horários.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Como funciona a parceria com a UNIAPAR?</summary>
+              <p>
+                A oferta apresentada é 100% EAD e inclui graduação, tecnólogo,
+                MBA, EJA e outros níveis. Fale com o representante para
+                confirmar o curso, o reconhecimento no e-MEC e as condições
+                vigentes.
               </p>
             </details>
           </div>
@@ -1867,14 +2168,31 @@
                 >
               </div>
             </div>
-            <iframe
-              class="map reveal delay1"
-              title="Mapa da Logoritmov em Brasília"
-              src="https://maps.google.com/maps?q=SH+Monte+D'Armas+Condominio+Estancia+Monte+D'Armas+V+Mod+3+Estancia+5+Modulo+3+Loja+3B+Brasilia+DF&z=14&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
+            <div class="location-media reveal delay1">
+              <figure class="facade-card">
+                <img
+                  src="assets/fachada-polo.jpeg"
+                  alt="Fachada do Polo Educacional Logoritmov em Brasília"
+                  loading="lazy"
+                />
+                <figcaption>Fachada do Polo Educacional Logoritmov.</figcaption>
+              </figure>
+              <iframe
+                class="map"
+                title="Mapa da Logoritmov em Brasília"
+                src="https://maps.google.com/maps?q=SH+Monte+D'Armas+Condominio+Estancia+Monte+D'Armas+V+Mod+3+Estancia+5+Modulo+3+Loja+3B+Brasilia+DF&z=15&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+              <a
+                class="btn btn-ghost small map-link"
+                href="https://maps.app.goo.gl/keUVAH1BBuY6qbrJ9"
+                target="_blank"
+                rel="noopener"
+                >Abrir rota no Google Maps ↗</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -1884,11 +2202,14 @@
         <span
           >© <span id="year"></span> Logoritmov · WR Educacional — Matemática,
           Filosofia e Música.</span
-        ><span>Educação, pensamento e desenvolvimento.</span
+        ><span>Escola de Matemática · Tudo sobre Matemática.</span
         ><span
           ><a href="mailto:suportelogaritmov@gmail.com"
             >suportelogaritmov@gmail.com</a
           ></span
+        >
+        <a href="https://wa.me/5561999118365" target="_blank" rel="noopener"
+          >Desenvolvido por GTI Soluções em Informática</a
         >
       </div>
     </footer>
@@ -1930,7 +2251,7 @@
       (() => {
         const phone = "5561991452986",
           message =
-            "Olá! Gostaria de saber mais sobre a Logoritmov / WR Educacional.";
+            "Olá! Gostaria de saber mais sobre os cursos da Logoritmov.";
         document
           .querySelectorAll("[data-wa]")
           .forEach(
@@ -1965,7 +2286,7 @@
           "modal-professor": [
             "Professor Vinícius",
             "Trajetória e formação",
-            `<p>Professor, fundador da Logoritmov e educador com interesse em matemática, filosofia e aprendizagem.</p><ul><li>Relata dar aulas desde os 16 anos.</li><li>Relata aprovação em mais de cinco universidades federais, incluindo UnB, IFG, UFG e UEG.</li><li>Licenciando na Universidade Estadual de Goiás.</li><li>Filósofo licenciando pela Universidade Pro Minas, conforme apresentação enviada.</li><li>Formação em Psicologia da Educação pela Universidade Estadual do Maranhão (UEMA).</li><li>Metodologia e Prática do Ensino de Matemática e Ensino da Filosofia — Unifamec.</li><li>Neuropsicopedagogia e Psicopedagogia — Unifamec.</li><li>História da Matemática e da Física — Unifamec.</li><li>A apresentação enviada informa mais de 120 mil seguidores no Instagram.</li></ul><p>As informações biográficas e de formação foram fornecidas pelo responsável e devem ser mantidas atualizadas.</p>`,
+            `<p>Professor, fundador da Logoritmov e educador com interesse em matemática, filosofia e aprendizagem.</p><ul><li>Dou aulas desde os 16 anos.</li><li>Aprovado em mais de cinco universidades, incluindo UnB, IFG, UFG e UEG. Sempre estudei em escola pública.</li><li>Licenciando em Matemática na Universidade Estadual de Goiás.</li><li>Filósofo licenciando pela Universidade Pro Minas, conforme apresentação enviada.</li><li>Formação em Psicologia da Educação pela Universidade Estadual do Maranhão (UEMA).</li><li>Metodologia e Prática do Ensino de Matemática e Ensino da Filosofia — Unifamec.</li><li>Formação em Neuropsicopedagogia e Psicopedagogia — Unifamec.</li><li>História da Matemática e da Física — Unifamec.</li><li>A apresentação enviada informa mais de 120 mil seguidores no Instagram.</li></ul><p>As informações biográficas e de formação foram fornecidas pelo responsável e devem ser mantidas atualizadas.</p>`,
           ],
           "modal-matematica": [
             "Aulas de Matemática",
@@ -2015,7 +2336,7 @@
           "modal-espaco": [
             "Estrutura presencial",
             "Sala de estudos e aula",
-            `<ul><li>7 baias de estudo com computadores modernos.</li><li>Computadores com processadores i5 e i7.</li><li>Cadeiras de estudo.</li><li>Projetor.</li><li>Ar-condicionado de 18.000 BTUs.</li><li>Monitoramento Verisure: 1 câmera 360° interna e 2 câmeras externas.</li></ul><p>Endereço informado: SH Monte D'Armas, Condomínio Estância Monte D'Armas V, Módulo 3, Loja 3B — Brasília/DF. Confirme horário e disponibilidade antes de ir.</p>`,
+            `<ul><li>7 baias de estudo com computadores modernos.</li><li>Computadores com processadores i5 e i7.</li><li>Cadeiras de estudo revestidas em couro.</li><li>Projetor.</li><li>Ar-condicionado de 18.000 BTUs.</li><li>Monitoramento Verisure: 1 câmera 360° interna e 2 câmeras externas.</li></ul><p>Endereço informado: SH Monte D'Armas, Condomínio Estância Monte D'Armas V, Módulo 3, Loja 3B — Brasília/DF. Confirme horário e disponibilidade antes de ir.</p>`,
           ],
           "modal-inclusao": [
             "Apoio educacional",
@@ -2029,13 +2350,13 @@
           ],
           "modal-movedu": [
             "MovEdu",
-            "Plataforma de estudos parceira",
-            `<p>A página original apresenta a MovEdu como uma plataforma independente com cursos em diferentes áreas e informava mais de 1.300 cursos. Catálogo, disponibilidade, valores e condições podem mudar.</p><p><a href="https://movedu.tec.br" target="_blank" rel="noopener" style="color:var(--yellow)">Acessar movedu.tec.br ↗</a></p>`,
+            "Nossa plataforma de ensino a distância",
+            `<p>A MovEdu é a plataforma de ensino a distância da Logoritmov. A apresentação enviada informa mais de 1.300 cursos, videoaulas, exercícios e recursos de acompanhamento. Consulte o catálogo, a disponibilidade, os valores e as condições vigentes.</p><p><a href="https://movedu.tec.br" target="_blank" rel="noopener" style="color:var(--yellow)">Acessar movedu.tec.br ↗</a></p>`,
           ],
           "modal-uniapar": [
             "Grupo UNIAPAR Educação",
-            "Cursos e informações",
-            `<p>A página original divulgava cursos de graduação, tecnólogo, tecnólogo por competência, MBA, EJA, ensino médio e ensino fundamental em parceria com o Grupo UNIAPAR Educação.</p><p>Consulte diretamente a equipe para confirmar cursos, modalidade, valores, disponibilidade e reconhecimento vigente.</p>`,
+            "Cursos universitários e técnicos",
+            `<p>A oferta apresentada é 100% EAD e inclui graduação, tecnólogo, tecnólogo por competência, MBA, EJA, ensino médio e ensino fundamental. A apresentação enviada informa reconhecimento no e-MEC; confirme a situação do curso específico, valores e condições diretamente com o representante.</p><p>Consulte diretamente a equipe sobre a parceria com o Grupo UNIAPAR Educação.</p>`,
           ],
         };
         document.querySelectorAll("[data-open]").forEach((el) =>
